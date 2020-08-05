@@ -1,17 +1,6 @@
 {
   "users": [
-    {
-      "id": "1",
-      "username": "admin",
-      "password": "123",
-      "role": "true"
-    },
-    {
-      "id": "2",
-      "username": "user",
-      "password": "123",
-      "role": "false"
-    }
+    
   ],
   "products": [
     {
@@ -45,5 +34,8 @@
       "name": "Women"
 
     }
+  ],
+  "shopCart": [
+
   ]
 }
