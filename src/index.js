@@ -6,7 +6,7 @@ import ImageUpload from './ImageUpload';
 
 ReactDOM.render(
   <React.StrictMode>
-    <ImageUpload />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );

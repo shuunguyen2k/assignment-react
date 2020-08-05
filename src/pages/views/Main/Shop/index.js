@@ -362,10 +362,7 @@ const Shop = ({ products }) => {
                       <div
                         className="product__item__pic set-bg"
                         style={{
-                          backgroundImage:
-                            "url(" +
-                            require("../../../../assets/img/shop/shop-1.jpg") +
-                            ")",
+                          backgroundImage: `url(${image})`
                         }}
                       >
                         {/* <div className="label new">New</div> */}

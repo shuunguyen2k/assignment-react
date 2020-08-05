@@ -53,8 +53,7 @@ const ProductDetails = ({ products }) => {
                       <img
                         // data-hash="product-1"
                         className="product__big__img"
-                        // src={require(product.image)}
-                        src={require("../../../../assets/img/shop/shop-1.jpg")}
+                        src={product.image}
                         alt=""
                         width={413}
                         height={550}
@@ -129,7 +128,11 @@ const ProductDetails = ({ products }) => {
                         <div className="stock__checkbox">
                           <label htmlFor="stockin">
                             In Stock
-                            <input type="checkbox" id="stockin" checked={true} />
+                            <input
+                              type="checkbox"
+                              id="stockin"
+                              checked={true}
+                            />
                             <span className="checkmark" />
                           </label>
                         </div>
