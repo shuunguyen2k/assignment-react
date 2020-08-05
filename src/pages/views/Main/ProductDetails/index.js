@@ -105,7 +105,7 @@ const ProductDetails = ({ products }) => {
                         <input type="text" defaultValue={1} />
                       </div>
                     </div>
-                    <Link to="#" className="cart-btn">
+                    <Link to="/shopCart" className="cart-btn">
                       <span className="icon_bag_alt" /> Add to cart
                     </Link>
                     <ul>

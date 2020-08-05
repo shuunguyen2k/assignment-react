@@ -13,6 +13,8 @@ import EditProduct from "../pages/views/Admin/EditProduct";
 import Home from "../pages/views/Main/Home";
 import Shop from "../pages/views/Main/Shop";
 import ProductDetails from "../pages/views/Main/ProductDetails";
+import ShopCart from "../pages/views/Main/ShopCart";
+import CheckOut from "../pages/views/Main/CheckOut";
 import Blog from "../pages/views/Main/Blog";
 import Contact from "../pages/views/Main/Contact";
 
@@ -76,6 +78,12 @@ const Routers = ({ products, onRemove, onAdd, onUpdate }) => {
               </Route>
               <Route path="/productDetails/:id">
                 <ProductDetails products={products} />
+              </Route>
+              <Route path="/shopCart">
+                <ShopCart />
+              </Route>
+              <Route path="/checkOut">
+                <CheckOut />
               </Route>
               <Route path="/blog">
                 <Blog />

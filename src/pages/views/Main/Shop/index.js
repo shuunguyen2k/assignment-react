@@ -361,9 +361,7 @@ const Shop = ({ products }) => {
                     <div className="product__item">
                       <div
                         className="product__item__pic set-bg"
-                        style={{
-                          backgroundImage: `url(${image})`
-                        }}
+                        style={{ backgroundImage: `url(${image})` }}
                       >
                         {/* <div className="label new">New</div> */}
                         <ul className="product__hover">

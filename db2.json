@@ -1,0 +1,145 @@
+{
+    "users": [
+      {
+        "id": "1",
+        "username": "admin",
+        "password": "123",
+        "role": "true"
+      },
+      {
+        "id": "2",
+        "username": "user",
+        "password": "123",
+        "role": "false"
+      }
+    ],
+    "products": [
+      {
+        "id": "1",
+        "name": "Furry hooded parka",
+        "brand": "SKMEIMore Men Watches from SKMEI41241",
+        "regularPrice": "59.0",
+        "salePrice": "49.0",
+        "description": "Nemo enim ipsam voluptatem quia aspernatur aut odit aut loret fugit, sed quia consequuntur magni lores eos qui ratione voluptatem sequi nesciunt.",
+        "categoryId": "1",
+        "image": "https://firebasestorage.googleapis.com/v0/b/react-basic-1d16b.appspot.com/o/images%2Fshop%2Fshop-1.jpg?alt=media&token=8b2dbe1a-9572-498c-b982-5e013087300a",
+        "galleryId": "1",
+        "availability": "true",
+        "availableColor": {
+          "red": "true",
+          "black": "false",
+          "gray": "false"
+        },
+        "availableSize": {
+          "xs": "true",
+          "s": "true",
+          "m": "false",
+          "l": "false"
+        },
+        "promotions": "Free shipping"
+      },
+      {
+        "id": "2",
+        "name": "Flowy striped skirt",
+        "brand": "SKMEIMore Men Watches from SKMEI",
+        "image": "https://firebasestorage.googleapis.com/v0/b/react-basic-1d16b.appspot.com/o/images%2Fshop%2Fshop-2.jpg?alt=media&token=f417938f-62a3-4184-920f-20af1a789ba8",
+        "description": "Nemo enim ipsam voluptatem quia aspernatur aut odit aut loret fugit, sed quia consequuntur magni lores eos qui ratione voluptatem sequi nesciunt.",
+        "price": "49.0",
+        "availability": "true",
+        "availableColor": "red",
+        "availableSize": "xs",
+        "promotions": "Free shipping"
+      },
+      {
+        "id": "3",
+        "name": "Croc-effect bag",
+        "brand": "SKMEIMore Men Watches from SKMEI",
+        "image": "https://firebasestorage.googleapis.com/v0/b/react-basic-1d16b.appspot.com/o/images%2Fshop%2Fshop-3.jpg?alt=media&token=4d54bf76-fdd2-43ca-9b2a-0453fe8186b4",
+        "description": "Nemo enim ipsam voluptatem quia aspernatur aut odit aut loret fugit, sed quia consequuntur magni lores eos qui ratione voluptatem sequi nesciunt.",
+        "price": "59.0",
+        "availability": "true",
+        "availableColor": "red",
+        "availableSize": "xs",
+        "promotions": "Free shipping"
+      },
+      {
+        "id": "4",
+        "name": "Dark wash Xavi jeans",
+        "brand": "SKMEIMore Men Watches from SKMEI",
+        "image": "https://firebasestorage.googleapis.com/v0/b/react-basic-1d16b.appspot.com/o/images%2Fshop%2Fshop-4.jpg?alt=media&token=6b0e62d3-fe87-4643-a6f7-f59bb50a0ca4",
+        "description": "Nemo enim ipsam voluptatem quia aspernatur aut odit aut loret fugit, sed quia consequuntur magni lores eos qui ratione voluptatem sequi nesciunt.",
+        "price": "59.0",
+        "availability": "true",
+        "availableColor": "red",
+        "availableSize": "xs",
+        "promotions": "Free shipping"
+      },
+      {
+        "id": "5",
+        "name": "Ankle-cuff sandals",
+        "brand": "SKMEIMore Men Watches from SKMEI",
+        "image": "https://firebasestorage.googleapis.com/v0/b/react-basic-1d16b.appspot.com/o/images%2Fshop%2Fshop-5.jpg?alt=media&token=8d7acbf4-3bf7-41b3-a7d3-f29e409e71d4",
+        "description": "Nemo enim ipsam voluptatem quia aspernatur aut odit aut loret fugit, sed quia consequuntur magni lores eos qui ratione voluptatem sequi nesciunt.",
+        "price": "59.0",
+        "availability": "true",
+        "availableColor": "red",
+        "availableSize": "xs",
+        "promotions": "Free shipping"
+      },
+      {
+        "id": "6",
+        "name": "Contrasting sunglasses",
+        "brand": "SKMEIMore Men Watches from SKMEI",
+        "image": "https://firebasestorage.googleapis.com/v0/b/react-basic-1d16b.appspot.com/o/images%2Fshop%2Fshop-6.jpg?alt=media&token=7a30f76a-4102-4944-84fb-1d104be559b3",
+        "description": "Nemo enim ipsam voluptatem quia aspernatur aut odit aut loret fugit, sed quia consequuntur magni lores eos qui ratione voluptatem sequi nesciunt.",
+        "price": "59.0",
+        "availability": "true",
+        "availableColor": "red",
+        "availableSize": "xs",
+        "promotions": "Free shipping"
+      },
+      {
+        "id": "7",
+        "name": "Circular pendant earrings",
+        "brand": "SKMEIMore Men Watches from SKMEI",
+        "image": "https://firebasestorage.googleapis.com/v0/b/react-basic-1d16b.appspot.com/o/images%2Fshop%2Fshop-7.jpg?alt=media&token=b098ba82-069c-4d5f-9c9a-2b7811ae4536",
+        "description": "Nemo enim ipsam voluptatem quia aspernatur aut odit aut loret fugit, sed quia consequuntur magni lores eos qui ratione voluptatem sequi nesciunt.",
+        "price": "59.0",
+        "availability": "true",
+        "availableColor": "red",
+        "availableSize": "xs",
+        "promotions": "Free shipping"
+      },
+      {
+        "id": "8",
+        "name": "Cotton T-Shirt",
+        "brand": "SKMEIMore Men Watches from SKMEI",
+        "image": "https://firebasestorage.googleapis.com/v0/b/react-basic-1d16b.appspot.com/o/images%2Fshop%2Fshop-8.jpg?alt=media&token=4cfb3fdf-7479-4bfb-9592-428a536ab1f3",
+        "description": "Nemo enim ipsam voluptatem quia aspernatur aut odit aut loret fugit, sed quia consequuntur magni lores eos qui ratione voluptatem sequi nesciunt.",
+        "price": "59.0",
+        "availability": "true",
+        "availableColor": "red",
+        "availableSize": "xs",
+        "promotions": "Free shipping"
+      },
+      {
+        "id": "9",
+        "name": "Water resistant zips backpack",
+        "brand": "SKMEIMore Men Watches from SKMEI",
+        "image": "https://firebasestorage.googleapis.com/v0/b/react-basic-1d16b.appspot.com/o/images%2Fshop%2Fshop-9.jpg?alt=media&token=55edba08-272b-4b3a-97ca-4367563eb32d",
+        "description": "Nemo enim ipsam voluptatem quia aspernatur aut odit aut loret fugit, sed quia consequuntur magni lores eos qui ratione voluptatem sequi nesciunt.",
+        "price": "59.0",
+        "availability": "true",
+        "availableColor": "red",
+        "availableSize": "xs",
+        "promotions": "Free shipping"
+      }
+    ],
+    "category": [
+      {
+        "id": "1",
+        "name": "Women"
+        
+      }
+    ]
+  }
