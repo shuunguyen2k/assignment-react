@@ -1,0 +1,110 @@
+const products = [
+    {
+        "id": "1",
+        "name": "Furry hooded parka",
+        "brand": "SKMEIMore Men Watches from SKMEI",
+        "image": "../../../../assets/img/shop/shop-1.jpg",
+        "description": "Nemo enim ipsam voluptatem quia aspernatur aut odit aut loret fugit, sed quia consequuntur magni lores eos qui ratione voluptatem sequi nesciunt.",
+        "price": "59.0",
+        "availability": "true",
+        "availableColor": "red",
+        "availableSize": "xs",
+        "promotions": "Free shipping"
+    },
+    {
+        "id": "2",
+        "name": "Flowy striped skirt",
+        "brand": "SKMEIMore Men Watches from SKMEI",
+        "image": "../../../../assets/img/shop/shop-2.jpg",
+        "description": "Nemo enim ipsam voluptatem quia aspernatur aut odit aut loret fugit, sed quia consequuntur magni lores eos qui ratione voluptatem sequi nesciunt.",
+        "price": "49.0",
+        "availability": "true",
+        "availableColor": "red",
+        "availableSize": "xs",
+        "promotions": "Free shipping"
+    },
+    {
+        "id": "3",
+        "name": "Croc-effect bag",
+        "brand": "SKMEIMore Men Watches from SKMEI",
+        "image": "../../../../assets/img/shop/shop-3.jpg",
+        "description": "Nemo enim ipsam voluptatem quia aspernatur aut odit aut loret fugit, sed quia consequuntur magni lores eos qui ratione voluptatem sequi nesciunt.",
+        "price": "59.0",
+        "availability": "true",
+        "availableColor": "red",
+        "availableSize": "xs",
+        "promotions": "Free shipping"
+    },
+    {
+        "id": "4",
+        "name": "Dark wash Xavi jeans",
+        "brand": "SKMEIMore Men Watches from SKMEI",
+        "image": "../../../../assets/img/shop/shop-4.jpg",
+        "description": "Nemo enim ipsam voluptatem quia aspernatur aut odit aut loret fugit, sed quia consequuntur magni lores eos qui ratione voluptatem sequi nesciunt.",
+        "price": "59.0",
+        "availability": "true",
+        "availableColor": "red",
+        "availableSize": "xs",
+        "promotions": "Free shipping"
+    },
+    {
+        "id": "5",
+        "name": "Ankle-cuff sandals",
+        "brand": "SKMEIMore Men Watches from SKMEI",
+        "image": "../../../../assets/img/shop/shop-5.jpg",
+        "description": "Nemo enim ipsam voluptatem quia aspernatur aut odit aut loret fugit, sed quia consequuntur magni lores eos qui ratione voluptatem sequi nesciunt.",
+        "price": "59.0",
+        "availability": "true",
+        "availableColor": "red",
+        "availableSize": "xs",
+        "promotions": "Free shipping"
+    },
+    {
+        "id": "6",
+        "name": "Contrasting sunglasses",
+        "brand": "SKMEIMore Men Watches from SKMEI",
+        "image": "../../../../assets/img/shop/shop-5.jpg",
+        "description": "Nemo enim ipsam voluptatem quia aspernatur aut odit aut loret fugit, sed quia consequuntur magni lores eos qui ratione voluptatem sequi nesciunt.",
+        "price": "59.0",
+        "availability": "true",
+        "availableColor": "red",
+        "availableSize": "xs",
+        "promotions": "Free shipping"
+    },
+    {
+        "id": "7",
+        "name": "Circular pendant earrings",
+        "brand": "SKMEIMore Men Watches from SKMEI",
+        "image": "../../../../assets/img/shop/shop-7.jpg",
+        "description": "Nemo enim ipsam voluptatem quia aspernatur aut odit aut loret fugit, sed quia consequuntur magni lores eos qui ratione voluptatem sequi nesciunt.",
+        "price": "59.0",
+        "availability": "true",
+        "availableColor": "red",
+        "availableSize": "xs",
+        "promotions": "Free shipping"
+    },
+    {
+        "id": "8",
+        "name": "Cotton T-Shirt",
+        "brand": "SKMEIMore Men Watches from SKMEI",
+        "image": "../../../../assets/img/shop/shop-8.jpg",
+        "description": "Nemo enim ipsam voluptatem quia aspernatur aut odit aut loret fugit, sed quia consequuntur magni lores eos qui ratione voluptatem sequi nesciunt.",
+        "price": "59.0",
+        "availability": "true",
+        "availableColor": "red",
+        "availableSize": "xs",
+        "promotions": "Free shipping"
+    },
+    {
+        "id": "9",
+        "name": "Water resistant zips backpack",
+        "brand": "SKMEIMore Men Watches from SKMEI",
+        "image": "../../../../assets/img/shop/shop-9.jpg",
+        "description": "Nemo enim ipsam voluptatem quia aspernatur aut odit aut loret fugit, sed quia consequuntur magni lores eos qui ratione voluptatem sequi nesciunt.",
+        "price": "59.0",
+        "availability": "true",
+        "availableColor": "red",
+        "availableSize": "xs",
+        "promotions": "Free shipping"
+    }
+]
