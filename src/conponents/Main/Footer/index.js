@@ -13,9 +13,7 @@ const Footer = (props) => {
                 className="instagram__item set-bg"
                 style={{
                   backgroundImage:
-                    "url(" +
-                    require("../../../assets/img/instagram/insta-1.jpg") +
-                    ")",
+                    "url(https://firebasestorage.googleapis.com/v0/b/react-basic-1d16b.appspot.com/o/images%2Finstagram%2Finsta-1.jpg?alt=media&token=ca9a9c02-b807-4b0a-bc3d-288dd46d8500)",
                 }}
               >
                 <div className="instagram__text">
@@ -29,9 +27,7 @@ const Footer = (props) => {
                 className="instagram__item set-bg"
                 style={{
                   backgroundImage:
-                    "url(" +
-                    require("../../../assets/img/instagram/insta-2.jpg") +
-                    ")",
+                    "url(https://firebasestorage.googleapis.com/v0/b/react-basic-1d16b.appspot.com/o/images%2Finstagram%2Finsta-2.jpg?alt=media&token=ab5fa0c5-c3c6-418f-9ee1-a821f80d261f)",
                 }}
               >
                 <div className="instagram__text">
@@ -45,9 +41,7 @@ const Footer = (props) => {
                 className="instagram__item set-bg"
                 style={{
                   backgroundImage:
-                    "url(" +
-                    require("../../../assets/img/instagram/insta-3.jpg") +
-                    ")",
+                    "url(https://firebasestorage.googleapis.com/v0/b/react-basic-1d16b.appspot.com/o/images%2Finstagram%2Finsta-3.jpg?alt=media&token=d8263908-b986-4f78-8aa0-feca8b7570ff)",
                 }}
               >
                 <div className="instagram__text">
@@ -61,9 +55,7 @@ const Footer = (props) => {
                 className="instagram__item set-bg"
                 style={{
                   backgroundImage:
-                    "url(" +
-                    require("../../../assets/img/instagram/insta-4.jpg") +
-                    ")",
+                    "url(https://firebasestorage.googleapis.com/v0/b/react-basic-1d16b.appspot.com/o/images%2Finstagram%2Finsta-4.jpg?alt=media&token=25b4e168-cab6-495d-bb3c-5498f301c2ba)",
                 }}
               >
                 <div className="instagram__text">
@@ -77,9 +69,7 @@ const Footer = (props) => {
                 className="instagram__item set-bg"
                 style={{
                   backgroundImage:
-                    "url(" +
-                    require("../../../assets/img/instagram/insta-5.jpg") +
-                    ")",
+                    "url(https://firebasestorage.googleapis.com/v0/b/react-basic-1d16b.appspot.com/o/images%2Finstagram%2Finsta-5.jpg?alt=media&token=cd1347ce-8f7f-4fdc-81fb-86eb334fef27)",
                 }}
               >
                 <div className="instagram__text">
@@ -93,9 +83,7 @@ const Footer = (props) => {
                 className="instagram__item set-bg"
                 style={{
                   backgroundImage:
-                    "url(" +
-                    require("../../../assets/img/instagram/insta-6.jpg") +
-                    ")",
+                    "url(https://firebasestorage.googleapis.com/v0/b/react-basic-1d16b.appspot.com/o/images%2Finstagram%2Finsta-6.jpg?alt=media&token=8f462a23-dd45-4b33-89ae-499854b2d77e)",
                 }}
               >
                 <div className="instagram__text">
@@ -117,7 +105,10 @@ const Footer = (props) => {
               <div className="footer__about">
                 <div className="footer__logo">
                   <a href="./index.html">
-                    <img src={require("../../../assets/img/logo.png")} alt="" />
+                    <img
+                      src="https://firebasestorage.googleapis.com/v0/b/react-basic-1d16b.appspot.com/o/images%2Flogo.png?alt=media&token=a504d96d-580b-4340-90f2-956e1452b6f6"
+                      alt=""
+                    />
                   </a>
                 </div>
                 <p>

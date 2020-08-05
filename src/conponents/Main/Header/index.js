@@ -10,7 +10,7 @@ const Header = (props) => {
           <div className="col-xl-3 col-lg-2">
             <div className="header__logo">
               <Link to="/">
-                <img src={require("../../../assets/img/logo.png")} alt="" />
+                <img src="https://firebasestorage.googleapis.com/v0/b/react-basic-1d16b.appspot.com/o/images%2Flogo.png?alt=media&token=a504d96d-580b-4340-90f2-956e1452b6f6" alt="" />
               </Link>
             </div>
           </div>
