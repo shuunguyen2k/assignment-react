@@ -31,159 +31,150 @@ const AddProduct = ({ onAdd }) => {
               onSubmit={handleSubmit(onHandleSubmit)}
             >
               <div className="form-group">
-                <label htmlFor="productName">Name</label>
+                <label htmlFor="productSKU">
+                  SKU<span className="text-danger">*</span>
+                </label>
+                <input
+                  type="text"
+                  name="SKU"
+                  className="form-control"
+                  id="productSKU"
+                  ref={register({ required: true })}
+                  aria-describedby="nameHelp"
+                />
+                <small id="nameHelp" className="form-text text-danger">
+                  {errors.SKU && <span>This field is required</span>}
+                </small>
+              </div>
+              <div className="form-group">
+                <label htmlFor="productName">
+                  Name<span className="text-danger">*</span>
+                </label>
                 <input
                   type="text"
                   name="name"
                   className="form-control"
                   id="productName"
-                  ref={register({ required: true, minLength: 1 })}
+                  ref={register({
+                    required: true,
+                    pattern: /^[A-Za-z0-9]+[A-Za-z0-9 ]*$/i,
+                  })}
                   aria-describedby="nameHelp"
                 />
                 <small id="nameHelp" className="form-text text-danger">
                   {errors.name && errors.name.type === "required" && (
                     <span>This field is required</span>
                   )}
-                  {errors.name && errors.name.type === "minLength" && (
-                    <span>Min Length 10</span>
+                  {errors.name && errors.name.type === "pattern" && (
+                    <span>This field is pattern</span>
                   )}
                 </small>
               </div>
               <div className="form-group">
-                <label htmlFor="productBrand">Brand</label>
-                <input
-                  type="text"
+                <label htmlFor="productBrand">
+                  Brand<span className="text-danger">*</span>
+                </label>
+                <select
                   name="brand"
                   className="form-control"
                   id="productBrand"
-                  ref={register({ required: true, minLength: 1 })}
+                  ref={register({ required: true })}
                   aria-describedby="brandHelp"
-                />
+                >
+                  <option value="a">a</option>
+                  <option value="b">b</option>
+                </select>
                 <small id="brandHelp" className="form-text text-danger">
-                  {errors.brand && errors.name.type === "required" && (
-                    <span>This field is required</span>
-                  )}
-                  {errors.brand && errors.name.type === "minLength" && (
-                    <span>Min Length 10</span>
+                  {errors.brand && <span>This field is required</span>}
+                </small>
+              </div>
+              <div className="form-group">
+                <label htmlFor="productRegularPrice">
+                  Regular Price<span className="text-danger">*</span>
+                </label>
+                <input
+                  type="number"
+                  // min={0}
+                  // step={0.01}
+                  defaultValue={0}
+                  name="regularPrice"
+                  className="form-control"
+                  id="productRegularPrice"
+                  ref={register({ required: true, min: 0 })}
+                  aria-describedby="regularPriceHelp"
+                />
+                <small id="regularPriceHelp" className="form-text text-danger">
+                  {errors.regularPrice && errors.regularPrice.type === "min" && (
+                    <span>Value must be greater than or equal to 0</span>
                   )}
                 </small>
               </div>
               <div className="form-group">
-                <label htmlFor="productPrice">Image</label>
-                <div className="input-group">
-                  <div className="custom-file">
-                    <input
-                      type="file"
-                      className="custom-file-input"
-                      id="inputGroupFile02"
-                      name="image"
-                    />
-                    <label
-                      className="custom-file-label"
-                      htmlFor="inputGroupFile02"
-                      aria-describedby="imageHelp"
-                    >
-                      Choose image
-                    </label>
-                  </div>
-                </div>
-                <small id="imageHelp" className="form-text text-danger">
-                  {errors.image && <span>This field is required</span>}
-                </small>
+                <label htmlFor="productSalePrice">Sale Price</label>
+                <input
+                  type="number"
+                  name="salePrice"
+                  className="form-control"
+                  id="productSalePrice"
+                  // ref={register({ required: true })}
+                  aria-describedby="nameHelp"
+                />
               </div>
               <div className="form-group">
-                <label htmlFor="productDescription">Description</label>
+                <label htmlFor="productDescription">
+                  Description<span className="text-danger">*</span>
+                </label>
                 <textarea
-                  rows="4"
-                  cols="50"
+                  type="text"
+                  rows={7}
                   name="description"
                   className="form-control"
                   id="productDescription"
-                  ref={register({ required: true })}
+                  ref={register({
+                    required: true,
+                    pattern: /^[A-Za-z0-9]+[A-Za-z0-9 ]*$/i,
+                  })}
                   aria-describedby="descriptionHelp"
-                  //   value="Nemo enim ipsam voluptatem quia aspernatur aut odit aut loret fugit, sed quia consequuntur magni lores eos qui ratione voluptatem sequi nesciunt."
                 />
+
                 <small id="descriptionHelp" className="form-text text-danger">
-                  {errors.description && <span>This field is required</span>}
+                  {errors.description &&
+                    errors.description.type === "required" && (
+                      <span>This field is required</span>
+                    )}
+                  {errors.description &&
+                    errors.description.type === "pattern" && (
+                      <span>This field is pattern</span>
+                    )}
                 </small>
               </div>
+
               <div className="form-group">
-                <label htmlFor="productPrice">Price</label>
-                <input
-                  type="text"
-                  name="price"
+                <label htmlFor="productCategory">Category</label>
+                <span className="text-danger">*</span>
+                <select
+                  name="category"
                   className="form-control"
-                  id="productPrice"
-                  ref={register({ required: true })}
-                  aria-describedby="priceHelp"
-                />
-                <small id="priceHelp" className="form-text text-danger">
-                  {errors.price && <span>This field is required</span>}
-                </small>
-              </div>
-              <div className="form-group">
-                <label htmlFor="productAvailability">Availability</label>
-                <input
-                  type="text"
-                  name="availability"
-                  className="form-control"
-                  id="productAvailability"
-                  ref={register({ required: true })}
-                  aria-describedby="availabilityHelp"
-                />
-                <small id="availabilityHelp" className="form-text text-danger">
-                  {errors.availability && <span>This field is required</span>}
-                </small>
-              </div>
-              <div className="form-group">
-                <label htmlFor="productAvailableColor">Available Color</label>
-                <input
-                  type="text"
-                  name="availableColor"
-                  className="form-control"
-                  id="productAvailableColor"
-                  ref={register({ required: true })}
-                  aria-describedby="availableColorHelp"
-                />
-                <small
-                  id="availableColorHelp"
-                  className="form-text text-danger"
+                  id="productCategory"
+                  aria-describedby="nameHelp"
                 >
-                  {errors.availableColor && <span>This field is required</span>}
-                </small>
+                  <option value="Mens">Mens</option>
+                  <option value="Womens">Womens</option>
+                </select>
               </div>
               <div className="form-group">
-                <label htmlFor="productAvailableSize">Available Size</label>
+                <label htmlFor="productImage">Image</label>
+                <span className="text-danger">*</span>
                 <input
-                  type="text"
-                  name="availableSize"
+                  type="file"
+                  name="image"
                   className="form-control"
-                  id="productAvailableSize"
+                  id="productImage"
                   ref={register({ required: true })}
-                  aria-describedby="availableSizeHelp"
+                  aria-describedby="imageHelp"
                 />
-                <small id="availableSizeHelp" className="form-text text-danger">
-                  {errors.availableSize && <span>This field is required</span>}
-                </small>
-              </div>
-              <div className="form-group">
-                <label htmlFor="productPromotions">Promotions</label>
-                <input
-                  type="text"
-                  name="promotions"
-                  className="form-control"
-                  id="productPromotions"
-                  ref={register({ required: true })}
-                  aria-describedby="productPromotionsHelp"
-                  placeholder="Free shipping"
-                />
-                <small
-                  id="productPromotionsHelp"
-                  className="form-text text-danger"
-                >
-                  {errors.productPromotions && (
-                    <span>This field is required</span>
-                  )}
+                <small id="imageHelp" className="form-text text-danger">
+                  {errors.image && <span>This field is required</span>}
                 </small>
               </div>
               <button type="submit" className="btn btn-primary">

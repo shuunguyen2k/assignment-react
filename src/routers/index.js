@@ -38,7 +38,7 @@ const Routers = ({ products, onRemove, onAdd, onUpdate }) => {
           <LayoutAdmin>
             <Switch>
               <Route path="/admin" exact>
-                <Dashboard />
+                <Dashboard products={products} />
               </Route>
               <Route
                 path="/admin/products"

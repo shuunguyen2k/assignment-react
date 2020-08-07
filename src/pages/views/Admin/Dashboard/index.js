@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const DashBoard = props => {
+const DashBoard = ({products}) => {
     return (
         <div>
-            DashBoard
+            Sum: {products.length}
         </div>
     )
 }

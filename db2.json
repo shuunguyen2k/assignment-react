@@ -1,145 +1,212 @@
 {
-    "users": [
-      {
-        "id": "1",
-        "username": "admin",
-        "password": "123",
-        "role": "true"
-      },
-      {
-        "id": "2",
-        "username": "user",
-        "password": "123",
-        "role": "false"
-      }
-    ],
-    "products": [
-      {
-        "id": "1",
-        "name": "Furry hooded parka",
-        "brand": "SKMEIMore Men Watches from SKMEI41241",
-        "regularPrice": "59.0",
-        "salePrice": "49.0",
-        "description": "Nemo enim ipsam voluptatem quia aspernatur aut odit aut loret fugit, sed quia consequuntur magni lores eos qui ratione voluptatem sequi nesciunt.",
-        "categoryId": "1",
-        "image": "https://firebasestorage.googleapis.com/v0/b/react-basic-1d16b.appspot.com/o/images%2Fshop%2Fshop-1.jpg?alt=media&token=8b2dbe1a-9572-498c-b982-5e013087300a",
-        "galleryId": "1",
-        "availability": "true",
-        "availableColor": {
-          "red": "true",
-          "black": "false",
-          "gray": "false"
-        },
-        "availableSize": {
-          "xs": "true",
-          "s": "true",
-          "m": "false",
-          "l": "false"
-        },
-        "promotions": "Free shipping"
-      },
-      {
-        "id": "2",
-        "name": "Flowy striped skirt",
-        "brand": "SKMEIMore Men Watches from SKMEI",
-        "image": "https://firebasestorage.googleapis.com/v0/b/react-basic-1d16b.appspot.com/o/images%2Fshop%2Fshop-2.jpg?alt=media&token=f417938f-62a3-4184-920f-20af1a789ba8",
-        "description": "Nemo enim ipsam voluptatem quia aspernatur aut odit aut loret fugit, sed quia consequuntur magni lores eos qui ratione voluptatem sequi nesciunt.",
-        "price": "49.0",
-        "availability": "true",
-        "availableColor": "red",
-        "availableSize": "xs",
-        "promotions": "Free shipping"
-      },
-      {
-        "id": "3",
-        "name": "Croc-effect bag",
-        "brand": "SKMEIMore Men Watches from SKMEI",
-        "image": "https://firebasestorage.googleapis.com/v0/b/react-basic-1d16b.appspot.com/o/images%2Fshop%2Fshop-3.jpg?alt=media&token=4d54bf76-fdd2-43ca-9b2a-0453fe8186b4",
-        "description": "Nemo enim ipsam voluptatem quia aspernatur aut odit aut loret fugit, sed quia consequuntur magni lores eos qui ratione voluptatem sequi nesciunt.",
-        "price": "59.0",
-        "availability": "true",
-        "availableColor": "red",
-        "availableSize": "xs",
-        "promotions": "Free shipping"
-      },
-      {
-        "id": "4",
-        "name": "Dark wash Xavi jeans",
-        "brand": "SKMEIMore Men Watches from SKMEI",
-        "image": "https://firebasestorage.googleapis.com/v0/b/react-basic-1d16b.appspot.com/o/images%2Fshop%2Fshop-4.jpg?alt=media&token=6b0e62d3-fe87-4643-a6f7-f59bb50a0ca4",
-        "description": "Nemo enim ipsam voluptatem quia aspernatur aut odit aut loret fugit, sed quia consequuntur magni lores eos qui ratione voluptatem sequi nesciunt.",
-        "price": "59.0",
-        "availability": "true",
-        "availableColor": "red",
-        "availableSize": "xs",
-        "promotions": "Free shipping"
-      },
-      {
-        "id": "5",
-        "name": "Ankle-cuff sandals",
-        "brand": "SKMEIMore Men Watches from SKMEI",
-        "image": "https://firebasestorage.googleapis.com/v0/b/react-basic-1d16b.appspot.com/o/images%2Fshop%2Fshop-5.jpg?alt=media&token=8d7acbf4-3bf7-41b3-a7d3-f29e409e71d4",
-        "description": "Nemo enim ipsam voluptatem quia aspernatur aut odit aut loret fugit, sed quia consequuntur magni lores eos qui ratione voluptatem sequi nesciunt.",
-        "price": "59.0",
-        "availability": "true",
-        "availableColor": "red",
-        "availableSize": "xs",
-        "promotions": "Free shipping"
-      },
-      {
-        "id": "6",
-        "name": "Contrasting sunglasses",
-        "brand": "SKMEIMore Men Watches from SKMEI",
-        "image": "https://firebasestorage.googleapis.com/v0/b/react-basic-1d16b.appspot.com/o/images%2Fshop%2Fshop-6.jpg?alt=media&token=7a30f76a-4102-4944-84fb-1d104be559b3",
-        "description": "Nemo enim ipsam voluptatem quia aspernatur aut odit aut loret fugit, sed quia consequuntur magni lores eos qui ratione voluptatem sequi nesciunt.",
-        "price": "59.0",
-        "availability": "true",
-        "availableColor": "red",
-        "availableSize": "xs",
-        "promotions": "Free shipping"
-      },
-      {
-        "id": "7",
-        "name": "Circular pendant earrings",
-        "brand": "SKMEIMore Men Watches from SKMEI",
-        "image": "https://firebasestorage.googleapis.com/v0/b/react-basic-1d16b.appspot.com/o/images%2Fshop%2Fshop-7.jpg?alt=media&token=b098ba82-069c-4d5f-9c9a-2b7811ae4536",
-        "description": "Nemo enim ipsam voluptatem quia aspernatur aut odit aut loret fugit, sed quia consequuntur magni lores eos qui ratione voluptatem sequi nesciunt.",
-        "price": "59.0",
-        "availability": "true",
-        "availableColor": "red",
-        "availableSize": "xs",
-        "promotions": "Free shipping"
-      },
-      {
-        "id": "8",
-        "name": "Cotton T-Shirt",
-        "brand": "SKMEIMore Men Watches from SKMEI",
-        "image": "https://firebasestorage.googleapis.com/v0/b/react-basic-1d16b.appspot.com/o/images%2Fshop%2Fshop-8.jpg?alt=media&token=4cfb3fdf-7479-4bfb-9592-428a536ab1f3",
-        "description": "Nemo enim ipsam voluptatem quia aspernatur aut odit aut loret fugit, sed quia consequuntur magni lores eos qui ratione voluptatem sequi nesciunt.",
-        "price": "59.0",
-        "availability": "true",
-        "availableColor": "red",
-        "availableSize": "xs",
-        "promotions": "Free shipping"
-      },
-      {
-        "id": "9",
-        "name": "Water resistant zips backpack",
-        "brand": "SKMEIMore Men Watches from SKMEI",
-        "image": "https://firebasestorage.googleapis.com/v0/b/react-basic-1d16b.appspot.com/o/images%2Fshop%2Fshop-9.jpg?alt=media&token=55edba08-272b-4b3a-97ca-4367563eb32d",
-        "description": "Nemo enim ipsam voluptatem quia aspernatur aut odit aut loret fugit, sed quia consequuntur magni lores eos qui ratione voluptatem sequi nesciunt.",
-        "price": "59.0",
-        "availability": "true",
-        "availableColor": "red",
-        "availableSize": "xs",
-        "promotions": "Free shipping"
-      }
-    ],
-    "category": [
-      {
-        "id": "1",
-        "name": "Women"
-        
-      }
-    ]
-  }
+  "products": [
+    {
+      "id": "1",
+      "SKU": "QM492116",
+      "name": "Mens Logo Print T-Shirt White",
+      "brandId": "2",
+      "regularPrice": "115.44",
+      "salePrice": "59.28",
+      "description": "Balmain continues to introduce a youthful energy to the brand’s classic silhouettes. Expect expert craftsmanship and premium materials blended with sports-inspired elements and a contemporary finish. Crafted from pure cotton, this logo print T-shirt from Balmain is all about timeless design. Featuring a ribbed round neck, short sleeves, a printed logo to the front and a straight hem.",
+      "categoriesId": "1",
+      "image": "",
+      "gallery": "",
+      "availability": "true"
+    },
+    {
+      "id": "2",
+      "SKU": "QM490840",
+      "name": "Mens Floral Bird Embroidered Jumper Black",
+      "brandId": "1",
+      "regularPrice": "132.60",
+      "salePrice": "67.86",
+      "description": "Discover the darkly alluring aesthetic of Alexander McQueen in the latest collection. Theatrical designs feature intricate, opulent detailing and gothic motifs. This black cotton floral bird embroidered jumper features a ribbed round neck, a slim fit, long sleeves and a ribbed hem and cuffs.",
+      "categoriesId": "1",
+      "image": "",
+      "galleryId": "",
+      "availability": "true"
+    },
+    {
+      "id": "3",
+      "SKU": "QM491403",
+      "name": "Mens Regular Fit Trousers Black",
+      "brandId": "2",
+      "regularPrice": "112.32",
+      "salePrice": "57.72",
+      "description": "Balmain’s tough, rock-and-roll edge was remixed with the designer’s signature glitz and glamour, presenting a rich line-up of sumptuous leathers, metal studding and heavy-duty embellishment. These black cotton regular fit trousers feature a mid rise, a front button fastening, side pockets, a straight leg, back pockets and an embroidered logo to the rear.",
+      "categoriesId": "1",
+      "image": "",
+      "galleryId": "",
+      "availability": "true"
+    },
+    {
+      "id": "4",
+      "SKU": "QM489867",
+      "name": "Mens Logo Patch Hoodie Green",
+      "brandId": "1",
+      "regularPrice": "137.28",
+      "salePrice": "70.20",
+      "description": "Infused with the label’s signature dark romanticism and urban styling, French fashion house Givenchy was originally founded in 1952 by acclaimed couturier Hubert de Givenchy. This green cotton logo patch hoodie from Givenchy features a hood with drawstring tie fastenings, long sleeves and a ribbed hem and cuffs.",
+      "categoriesId": "1",
+      "image": "",
+      "galleryId": "",
+      "availability": "true"
+    },
+    {
+      "id": "5",
+      "SKU": "QM492319",
+      "name": "Mens Classic Plain Shirt White",
+      "brandId": "4",
+      "regularPrice": "123.24",
+      "salePrice": "63.18",
+      "description": "By being strongly focused on both style and functionality, Giorgio Armani creates elegant designs for the modern man that combine traditional standards of production with a dash of irreverent attitude. Crafted from white cotton, this classic plain shirt from Emporio Armani features a classic collar, a front button fastening, long sleeves and a curved hem.",
+      "categoriesId": "1",
+      "image": "",
+      "galleryId": "",
+      "availability": "true"
+    },
+    {
+      "id": "6",
+      "SKU": "QM492312",
+      "name": "Mens Floral Paisley Print Shirt Multicolor",
+      "brandId": "5",
+      "regularPrice": "123.24",
+      "salePrice": "63.18",
+      "description": "Contrast is key at Etro. Relaxed silhouettes and traditional signature prints reflect the label’s bohemian roots, while dramatic colours and sharp tailoring add a more dynamic element to other pieces in the collection. This multicolour floral paisley print shirt is crafted from cotton and features a classic collar, a front button fastening, long sleeves, button cuffs and a curved hem.",
+      "categoriesId": "1",
+      "image": "",
+      "galleryId": "",
+      "availability": "true"
+    },
+    {
+      "id": "7",
+      "SKU": "QM492213",
+      "name": "Mens Embroidered Rose Patch T-Shirt White",
+      "brandId": "1",
+      "regularPrice": "134.16",
+      "salePrice": "68.64",
+      "description": "Alexander McQueen is renowned for being the champion of eye-popping theatrics, toughening up everyday looks with gothic romanticism. Introducing this white cotton embroidered rose patch T-shirt from Alexander McQueen for AW19. Featuring a round neck, short sleeves, an embroidered rose motif to the chest and a lettered logo to the front.",
+      "categoriesId": "1",
+      "image": "",
+      "galleryId": "",
+      "availability": "true"
+    },
+    {
+      "id": "8",
+      "SKU": "QM491307",
+      "name": "Mens Monster Print Shirt Black/Red",
+      "brandId": "6",
+      "regularPrice": "126.36",
+      "salePrice": "64.74",
+      "description": "Red and black cotton monster print shirt from Givenchy featuring a classic collar, a button fastening, short sleeves, contrasting panels and a rear graphic print design.",
+      "categoriesId": "1",
+      "image": "",
+      "galleryId": "",
+      "availability": "true"
+    },
+    {
+      "id": "9",
+      "SKU": "QM490719",
+      "name": "Womens Bohemin Print Dress White",
+      "brandId": "5",
+      "regularPrice": "112.32",
+      "salePrice": "57.72",
+      "description": "Etro is synonymous with its bohemian-inspired paisley and floral prints, something which has remained a core element of the collections from the brand’s conception in 1968, right through to the present day. Presented in a white silk blend, this bohemian print dress from Etro features long sleeves, a v-neck and a belted waist.",
+      "categoriesId": "2",
+      "image": "",
+      "galleryId": "",
+      "availability": "true"
+    },
+    {
+      "id": "10",
+      "SKU": "QM49045",
+      "name": "Womens Drawstring Midi Dress White",
+      "brandId": "7",
+      "regularPrice": "112.32",
+      "salePrice": "57.72",
+      "description": "Enamoured with the idiosyncratic; enigmatic Belgian designer Martin Margiela set up his eponymous label in 1988 with a focus on progressive design that reinterprets the social norm. This white cotton drawstring midi dress from Maison Margiela features a stand-up collar, a front zip fastening, a fitted waist, side pockets, a sleeveless design and an a-line shape skirt.",
+      "categoriesId": "2",
+      "image": "",
+      "galleryId": "",
+      "availability": "true"
+    },
+    {
+      "id": "11",
+      "SKU": "QM489650",
+      "name": "Womens Floral Embroidered Dress White/Orange",
+      "brandId": "5",
+      "regularPrice": "131.04",
+      "salePrice": "67.08",
+      "description": "Quality natural fabrics are valued highly at Etro – the brand expresses a kind of refined, intellectual fashion that blends handcrafted skills with creative innovation, as well as fusing timeless materials with contemporary silhouettes. Crafted in Italy, this orange and white cotton and silk blend dress features a classic collar, long sleeves, an embroidered floral design, a short length and a shift silhouette.",
+      "categoriesId": "2",
+      "image": "",
+      "galleryId": "",
+      "availability": "true"
+    },
+    {
+      "id": "12",
+      "SKU": "QM489638",
+      "name": "Womens Floral-Print Silk-Jacquard Dress Red",
+      "brandId": "5",
+      "regularPrice": "132.60",
+      "salePrice": "67.86",
+      "description": "The reigning king of clash and chaos, Etro’s dramatic prints are like no other. On brand with a bold floral print, this blue and pink cut-out back floral print dress imbues a sense of sophisticated edge. With ruched long sleeves with drawstring details and a triangle cut-out detail in the rear, this piece embodies eye-catching style with elegance and glamour. Also featuring a cowl neck, a concealed side zip fastening, a mid-length and a semi-fitted silhouette.",
+      "categoriesId": "2",
+      "image": "",
+      "galleryId": "",
+      "availability": "true"
+    },
+    {
+      "id": "13",
+      "SKU": "QM489556",
+      "name": "Womens Striped Belted Cardigan Grey",
+      "brandId": "3",
+      "regularPrice": "129.48",
+      "salePrice": "66.30",
+      "description": "Grey wool blend striped belted cardigan from Brunello Cucinelli featuring a shawl lapel, a belted waist, horizontal stripes, long sleeves and a ribbed hem and cuffs.",
+      "categoriesId": "2",
+      "image": "",
+      "galleryId": "",
+      "availability": "true"
+    },
+    {
+      "id": "14",
+      "SKU": "QM489447",
+      "name": "Womens Strapless Evening Dress Green",
+      "brandId": "1",
+      "regularPrice": "135.72",
+      "salePrice": "69.42",
+      "description": "Alexander McQueen replaces gothic, dark romanticism for classic feminine and floral designs in the new SS19 collection, as showcased by this pale green silk strapless evening dress featuring a gathered design, a rear zip fastening, draped details and a sheer construction.",
+      "categoriesId": "2",
+      "image": "",
+      "galleryId": "",
+      "availability": "true"
+    },
+    {
+      "id": "15",
+      "SKU": "QM492727",
+      "name": "Womens Cropped Boyfriend Jeans Blue",
+      "brandId": "4",
+      "regularPrice": "85.80",
+      "salePrice": "44.46",
+      "description": "With a timeless elegance about them, Emporio Armani’s womenswear collections are able to combine luxury with practicality. These mid-blue cropped boyfriend jeans are crafted from cotton and feature a high rise, a button and zip fly, a waistband with belt loops, a five pocket design and a relaxed fit.",
+      "categoriesId": "2",
+      "image": "",
+      "galleryId": "",
+      "availability": "true"
+    },
+    {
+      "id": "16",
+      "SKU": "QM492631",
+      "name": "Womens Logo Sweater Red",
+      "brandId": "8",
+      "regularPrice": "101.40",
+      "salePrice": "52.26",
+      "description": "As well as art, Massimo Giorgetti has cited the modern indie music scene as a main inspiration for his designs. Refresh your AW19 wardrobe with this red cotton logo sweater from MSGM featuring a crew neck, long sleeves, an elasticated hem, elasticated cuffs, a relaxed fit and a logo at the front.",
+      "categoriesId": "2",
+      "image": "",
+      "galleryId": "",
+      "availability": "true"
+    }
+  ]
+}

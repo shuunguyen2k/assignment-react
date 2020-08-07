@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
 import Routers from "./routers";
-import apiRequest from "./api/productApi";
+import productsApiRequest from "./api/productApi";
+import brandsApiRequest from "./api/productApi";
 
 function App() {
   const [products, setProducts] = useState([]);
+
   useEffect(() => {
     const getProducts = async () => {
       try {
-        const { data } = await apiRequest.getAll();
+        const { data } = await productsApiRequest.getAll();
         setProducts(data);
       } catch (error) {
         console.log("Failed to request API: ", error);
@@ -18,7 +20,7 @@ function App() {
 
   const onHandleAdd = async (product) => {
     try {
-      const { data } = await apiRequest.create(product);
+      const { data } = await productsApiRequest.create(product);
       setProducts([...products, data]);
     } catch (error) {
       console.log("failed to request API: ", error);
@@ -31,12 +33,12 @@ function App() {
     );
     // localStorage.setItem("products", JSON.stringify(newProducts));
     setProducts(newProducts);
-    apiRequest.update(updateProduct.id, updateProduct);
+    productsApiRequest.update(updateProduct.id, updateProduct);
   };
 
   const onHandleRemove = async (id) => {
     try {
-      const { data } = await apiRequest.remove(id);
+      const { data } = await productsApiRequest.remove(id);
       const newProducts = products.filter((product) => product.id !== id);
       setProducts(newProducts);
       window.alert("Delte Successfully!!");

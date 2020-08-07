@@ -1,9 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link  } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Products = ({ products, onRemove }) => {
-  console.log(products);
   const removeHandle = (id) => {
     onRemove(id);
   };
@@ -20,13 +19,21 @@ const Products = ({ products, onRemove }) => {
           <div className="table-responsive">
             <table className="table table-bordered">
               <thead>
-                <tr>
+                <tr style={{ textAlign: "center" }}>
                   <th scope="col">#</th>
+                  <th scope="col">SKU</th>
                   <th scope="col">Name</th>
                   <th scope="col">Brand</th>
+                  <th scope="col">Regular Price</th>
+                  <th scope="col">Sale Price</th>
+                  <th scope="col">Description</th>
+                  <th scope="col">Categories</th>
                   <th scope="col">Image</th>
-                  <th scope="col">Price</th>
-                  <th scope="col" width="170"></th>
+                  <th scope="col">Gallery</th>
+                  <th scope="col">Availability</th>
+                  <th scope="col" width="170">
+                    Action
+                  </th>
                 </tr>
               </thead>
               <tbody>
@@ -34,32 +41,36 @@ const Products = ({ products, onRemove }) => {
                   (
                     {
                       id,
+                      SKU,
                       name,
-                      brand,
-                      image,
+                      brandId,
+                      regularPrice,
+                      salePrice,
                       description,
-                      price,
+                      categoriesId,
+                      image,
+                      gallery,
                       availability,
-                      availableColor,
-                      availableSize,
-                      promotions,
                     },
                     index
                   ) => (
                     <tr key={index}>
                       <th scope="row">{index + 1}</th>
+                      <td>{SKU}</td>
                       <td>{name}</td>
-                      <td>{brand}</td>
+                      <td>{brandId}</td>
+                      <td>{regularPrice}</td>
+                      <td>{salePrice}</td>
+                      <td>{description}</td>
+                      <td>{categoriesId}</td>
+                      <td><img src={image} alt="" width={50} /></td>
+                      <td>{gallery}</td>
+                      <td>{availability}</td>
                       <td>
-                        <img
-                          src={require("../../../../assets/img/shop/shop-1.jpg")}
-                          alt=""
-                          width="50"
-                        />
-                      </td>
-                      <td>{price}</td>
-                      <td>
-                        <Link className="btn btn-primary" to={`/admin/product/${id}`}>
+                        <Link
+                          className="btn btn-primary"
+                          to={`/admin/product/${id}`}
+                        >
                           Edit
                         </Link>
                         <button
