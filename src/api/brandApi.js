@@ -4,4 +4,4 @@ const getAll = () => {
   return http.get("/brands");
 };
 
-export default getAll;
+export default { getAll };

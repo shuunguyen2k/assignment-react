@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Routers from "./routers";
 import productsApiRequest from "./api/productApi";
-import brandsApiRequest from "./api/productApi";
+import brandsApiRequest from "./api/brandApi";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -10,12 +10,26 @@ function App() {
     const getProducts = async () => {
       try {
         const { data } = await productsApiRequest.getAll();
+        // console.log(data);
         setProducts(data);
       } catch (error) {
         console.log("Failed to request API: ", error);
       }
     };
     getProducts();
+  }, []);
+
+  const [brands, setBrands] = useState([]);
+  useEffect(() => {
+    const getBrands = async () => {
+      try {
+        const { data } = await brandsApiRequest.getAll();
+        setBrands(data);
+      } catch (error) {
+        console.log("Failed to request API: ", error);
+      }
+    };
+    getBrands();
   }, []);
 
   const onHandleAdd = async (product) => {
@@ -52,6 +66,7 @@ function App() {
       <div className="App">
         <Routers
           products={products}
+          brands={brands}
           onAdd={onHandleAdd}
           onRemove={onHandleRemove}
           onUpdate={onHandleUpdate}

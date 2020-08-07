@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
-const Products = ({ products, onRemove }) => {
+const Products = ({ products, brands, onRemove }) => {
   const removeHandle = (id) => {
     onRemove(id);
   };
@@ -37,52 +37,39 @@ const Products = ({ products, onRemove }) => {
                 </tr>
               </thead>
               <tbody>
-                {products.map(
-                  (
-                    {
-                      id,
-                      SKU,
-                      name,
-                      brandId,
-                      regularPrice,
-                      salePrice,
-                      description,
-                      categoriesId,
-                      image,
-                      gallery,
-                      availability,
-                    },
-                    index
-                  ) => (
-                    <tr key={index}>
-                      <th scope="row">{index + 1}</th>
-                      <td>{SKU}</td>
-                      <td>{name}</td>
-                      <td>{brandId}</td>
-                      <td>{regularPrice}</td>
-                      <td>{salePrice}</td>
-                      <td>{description}</td>
-                      <td>{categoriesId}</td>
-                      <td><img src={image} alt="" width={50} /></td>
-                      <td>{gallery}</td>
-                      <td>{availability}</td>
-                      <td>
-                        <Link
-                          className="btn btn-primary"
-                          to={`/admin/product/${id}`}
-                        >
-                          Edit
-                        </Link>
-                        <button
-                          className="btn btn-danger ml-3"
-                          onClick={() => removeHandle(id)}
-                        >
-                          Delete
-                        </button>
-                      </td>
-                    </tr>
-                  )
-                )}
+                {products.map((product, index) => (
+                  <tr key={index}>
+                    <th scope="row">{index + 1}</th>
+                    <td>{product.SKU}</td>
+                    <td>{product.name}</td>
+                    <td>
+                      {brands.find((brand) => brand.id === product.brandId)}
+                    </td>
+                    <td>{product.regularPrice}</td>
+                    <td>{product.salePrice}</td>
+                    <td>{product.description}</td>
+                    <td>{product.categoriesId}</td>
+                    <td>
+                      <img src={product.image} alt="" width={50} />
+                    </td>
+                    <td>{product.gallery}</td>
+                    <td>{product.availability}</td>
+                    <td>
+                      <Link
+                        className="btn btn-primary"
+                        to={`/admin/product/${product.id}`}
+                      >
+                        Edit
+                      </Link>
+                      <button
+                        className="btn btn-danger ml-3"
+                        onClick={() => removeHandle(product.id)}
+                      >
+                        Delete
+                      </button>
+                    </td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>

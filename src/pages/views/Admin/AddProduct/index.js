@@ -2,19 +2,41 @@ import React from "react";
 import PropTypes from "prop-types";
 import { useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import firebase from "../../../../firebase";
 
 const AddProduct = ({ onAdd }) => {
   const { register, handleSubmit, errors } = useForm(); // Sử dụng hook form
   let history = useHistory();
+
   const onHandleSubmit = (data) => {
-    const newData = {
-      id: Math.random().toString(36).substr(2, 9),
-      ...data,
-    };
-    onAdd(newData);
-    history.push("/admin/products");
-    window.alert("Add Successfully!!");
+    // console.log(data.image[0]);
+    let file = data.image[0];
+    let storageRef = firebase.storage().ref(`images/products/${file.name}`);
+    storageRef.put(file).then(function () {
+      storageRef.getDownloadURL().then((url) => {
+        console.log(url);
+        // const newData = {
+        //   id: Math.random().toString(36).substr(2, 9),
+        //   ...data,
+        //   desc,
+        //   image: url,
+        // };
+        // console.log(newData);
+        // // đẩy dữ liệu ra ngoài app.js thông qua props onAdd
+        // onAdd(newData);
+      });
+    });
   };
+
+  // const onHandleSubmit = (data) => {
+  //   const newData = {
+  //     id: Math.random().toString(36).substr(2, 9),
+  //     ...data,
+  //   };
+  //   onAdd(newData);
+  //   history.push("/admin/products");
+  //   window.alert("Add Successfully!!");
+  // };
   return (
     <section className="shop spad">
       <div className="container">
@@ -95,7 +117,7 @@ const AddProduct = ({ onAdd }) => {
                 <input
                   type="number"
                   // min={0}
-                  // step={0.01}
+                  step={0.01}
                   defaultValue={0}
                   name="regularPrice"
                   className="form-control"
@@ -104,9 +126,10 @@ const AddProduct = ({ onAdd }) => {
                   aria-describedby="regularPriceHelp"
                 />
                 <small id="regularPriceHelp" className="form-text text-danger">
-                  {errors.regularPrice && errors.regularPrice.type === "min" && (
-                    <span>Value must be greater than or equal to 0</span>
-                  )}
+                  {errors.regularPrice &&
+                    errors.regularPrice.type === "min" && (
+                      <span>Value must be greater than or equal to 0</span>
+                    )}
                 </small>
               </div>
               <div className="form-group">
@@ -136,7 +159,6 @@ const AddProduct = ({ onAdd }) => {
                   })}
                   aria-describedby="descriptionHelp"
                 />
-
                 <small id="descriptionHelp" className="form-text text-danger">
                   {errors.description &&
                     errors.description.type === "required" && (
@@ -163,8 +185,9 @@ const AddProduct = ({ onAdd }) => {
                 </select>
               </div>
               <div className="form-group">
-                <label htmlFor="productImage">Image</label>
-                <span className="text-danger">*</span>
+                <label htmlFor="productImage">
+                  Image<span className="text-danger">*</span>
+                </label>
                 <input
                   type="file"
                   name="image"
@@ -176,6 +199,17 @@ const AddProduct = ({ onAdd }) => {
                 <small id="imageHelp" className="form-text text-danger">
                   {errors.image && <span>This field is required</span>}
                 </small>
+              </div>
+              <div className="form-group">
+                <label htmlFor="productGallery">Gallery</label>
+                <input
+                  type="file"
+                  name="gallery"
+                  multiple
+                  className="form-control"
+                  id="productGallery"
+                  aria-describedby="galleryHelp"
+                />
               </div>
               <button type="submit" className="btn btn-primary">
                 Add Product
