@@ -18,7 +18,14 @@ import CheckOut from "../pages/views/Main/CheckOut";
 import Blog from "../pages/views/Main/Blog";
 import Contact from "../pages/views/Main/Contact";
 
-const Routers = ({ products, brands, onRemove, onAdd, onUpdate }) => {
+const Routers = ({
+  products,
+  brands,
+  categories,
+  onRemove,
+  onAdd,
+  onUpdate,
+}) => {
   const onHandleAdd = (product) => {
     onAdd(product);
   };
@@ -47,6 +54,7 @@ const Routers = ({ products, brands, onRemove, onAdd, onUpdate }) => {
                     {...props}
                     products={products}
                     brands={brands}
+                    categories={categories}
                     onRemove={onHandleRemove}
                   />
                 )}

@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
-const Products = ({ products, brands, onRemove }) => {
+const Products = ({ products, brands, categories, onRemove }) => {
   const removeHandle = (id) => {
     onRemove(id);
   };
@@ -31,9 +31,7 @@ const Products = ({ products, brands, onRemove }) => {
                   <th scope="col">Image</th>
                   <th scope="col">Gallery</th>
                   <th scope="col">Availability</th>
-                  <th scope="col" width="170">
-                    Action
-                  </th>
+                  <th scope="col">Action</th>
                 </tr>
               </thead>
               <tbody>
@@ -43,24 +41,31 @@ const Products = ({ products, brands, onRemove }) => {
                     <td>{product.SKU}</td>
                     <td>{product.name}</td>
                     <td>
-                      {brands.find((brand) => brand.id === product.brandId)}
+                      {brands.map(({ id, name }) => {
+                        if (id === product.brandId) return name;
+                      })}
                     </td>
                     <td>{product.regularPrice}</td>
                     <td>{product.salePrice}</td>
                     <td>{product.description}</td>
-                    <td>{product.categoriesId}</td>
+                    <td>
+                      {categories.map(({ id, name }) => {
+                        if (id === product.categoriesId) return name;
+                      })}
+                    </td>
                     <td>
                       <img src={product.image} alt="" width={50} />
                     </td>
                     <td>{product.gallery}</td>
                     <td>{product.availability}</td>
-                    <td>
+                    <td style={{ textAlign: "center" }}>
                       <Link
                         className="btn btn-primary"
                         to={`/admin/product/${product.id}`}
                       >
                         Edit
                       </Link>
+                      <br /><br />
                       <button
                         className="btn btn-danger ml-3"
                         onClick={() => removeHandle(product.id)}
