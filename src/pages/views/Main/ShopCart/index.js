@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
-const ShopCart = (props) => {
+const ShopCart = ({ products, shopCarts }) => {
+  console.log(shopCarts);
+  const [currentShopCart, setCurrentShopCart] = useState(
+    shopCarts[shopCarts.length()]
+  );
   return (
     <div>
       {/* Breadcrumb Begin */}

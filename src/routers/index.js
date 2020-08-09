@@ -22,6 +22,7 @@ const Routers = ({
   products,
   brands,
   categories,
+  shopCarts,
   onRemove,
   onAdd,
   onUpdate,
@@ -61,7 +62,14 @@ const Routers = ({
               ></Route>
               <Route
                 path="/admin/product/add"
-                render={(props) => <AddProduct {...props} onAdd={onAdd} />}
+                render={(props) => (
+                  <AddProduct
+                    {...props}
+                    brands={brands}
+                    categories={categories}
+                    onAdd={onAdd}
+                  />
+                )}
               ></Route>
               <Route
                 path="/admin/product/:id"
@@ -69,6 +77,8 @@ const Routers = ({
                   <EditProduct
                     {...props}
                     products={products}
+                    brands={brands}
+                    categories={categories}
                     onUpdate={onHandleUpdate}
                   />
                 )}
@@ -86,10 +96,14 @@ const Routers = ({
                 <Shop products={products} />
               </Route>
               <Route path="/productDetails/:id">
-                <ProductDetails products={products} />
+                <ProductDetails
+                  products={products}
+                  brands={brands}
+                  categories={categories}
+                />
               </Route>
               <Route path="/shopCart">
-                <ShopCart />
+                <ShopCart products={products} shopCarts={shopCarts} />
               </Route>
               <Route path="/checkOut">
                 <CheckOut />

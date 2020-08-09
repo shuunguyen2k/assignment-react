@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import firebase from "../../../../firebase";
 
-const AddProduct = ({ onAdd }) => {
+const AddProduct = ({ brands, categories, onAdd }) => {
   const { register, handleSubmit, errors } = useForm(); // Sử dụng hook form
   let history = useHistory();
 
@@ -14,29 +14,17 @@ const AddProduct = ({ onAdd }) => {
     let storageRef = firebase.storage().ref(`images/products/${file.name}`);
     storageRef.put(file).then(function () {
       storageRef.getDownloadURL().then((url) => {
-        console.log(url);
-        // const newData = {
-        //   id: Math.random().toString(36).substr(2, 9),
-        //   ...data,
-        //   desc,
-        //   image: url,
-        // };
-        // console.log(newData);
-        // // đẩy dữ liệu ra ngoài app.js thông qua props onAdd
-        // onAdd(newData);
+        const newData = {
+          id: Math.random().toString(36).substr(2, 9),
+          ...data,
+          image: url,
+        };
+        onAdd(newData);
+        history.push("/admin/products");
+        window.alert("Add Successfully!!");
       });
     });
   };
-
-  // const onHandleSubmit = (data) => {
-  //   const newData = {
-  //     id: Math.random().toString(36).substr(2, 9),
-  //     ...data,
-  //   };
-  //   onAdd(newData);
-  //   history.push("/admin/products");
-  //   window.alert("Add Successfully!!");
-  // };
   return (
     <section className="shop spad">
       <div className="container">
@@ -79,7 +67,7 @@ const AddProduct = ({ onAdd }) => {
                   id="productName"
                   ref={register({
                     required: true,
-                    pattern: /^[A-Za-z0-9]+[A-Za-z0-9 ]*$/i,
+                    pattern: /^[\w\d-]+[\w\d\s-]*$/i,
                   })}
                   aria-describedby="nameHelp"
                 />
@@ -93,22 +81,22 @@ const AddProduct = ({ onAdd }) => {
                 </small>
               </div>
               <div className="form-group">
-                <label htmlFor="productBrand">
+                <label htmlFor="productBrandId">
                   Brand<span className="text-danger">*</span>
                 </label>
                 <select
-                  name="brand"
+                  name="brandId"
                   className="form-control"
-                  id="productBrand"
-                  ref={register({ required: true })}
-                  aria-describedby="brandHelp"
+                  id="productBrandId"
+                  ref={register}
+                  aria-describedby="brandIdHelp"
                 >
-                  <option value="a">a</option>
-                  <option value="b">b</option>
+                  {brands.map(({ id, name }) => (
+                    <option key={id} value={id}>
+                      {name}
+                    </option>
+                  ))}
                 </select>
-                <small id="brandHelp" className="form-text text-danger">
-                  {errors.brand && <span>This field is required</span>}
-                </small>
               </div>
               <div className="form-group">
                 <label htmlFor="productRegularPrice">
@@ -136,6 +124,7 @@ const AddProduct = ({ onAdd }) => {
                 <label htmlFor="productSalePrice">Sale Price</label>
                 <input
                   type="number"
+                  step={0.01}
                   name="salePrice"
                   className="form-control"
                   id="productSalePrice"
@@ -144,44 +133,35 @@ const AddProduct = ({ onAdd }) => {
                 />
               </div>
               <div className="form-group">
-                <label htmlFor="productDescription">
-                  Description<span className="text-danger">*</span>
-                </label>
+                <label htmlFor="productDescription">Description</label>
                 <textarea
                   type="text"
                   rows={7}
                   name="description"
                   className="form-control"
                   id="productDescription"
-                  ref={register({
-                    required: true,
-                    pattern: /^[A-Za-z0-9]+[A-Za-z0-9 ]*$/i,
-                  })}
+                  ref={register({ required: true })}
                   aria-describedby="descriptionHelp"
                 />
                 <small id="descriptionHelp" className="form-text text-danger">
-                  {errors.description &&
-                    errors.description.type === "required" && (
-                      <span>This field is required</span>
-                    )}
-                  {errors.description &&
-                    errors.description.type === "pattern" && (
-                      <span>This field is pattern</span>
-                    )}
+                  {errors.description && <span>This field is required</span>}
                 </small>
               </div>
-
               <div className="form-group">
-                <label htmlFor="productCategory">Category</label>
+                <label htmlFor="productCategoryId">Category</label>
                 <span className="text-danger">*</span>
                 <select
-                  name="category"
+                  name="categoryId"
                   className="form-control"
-                  id="productCategory"
-                  aria-describedby="nameHelp"
+                  id="productCategoryId"
+                  ref={register}
+                  aria-describedby="categoryIdHelp"
                 >
-                  <option value="Mens">Mens</option>
-                  <option value="Womens">Womens</option>
+                  {categories.map(({ id, name }) => (
+                    <option key={id} value={id}>
+                      {name}
+                    </option>
+                  ))}
                 </select>
               </div>
               <div className="form-group">
@@ -210,6 +190,36 @@ const AddProduct = ({ onAdd }) => {
                   id="productGallery"
                   aria-describedby="galleryHelp"
                 />
+              </div>
+              <div className="form-group">
+                <label htmlFor="productAvailability">
+                  Availability<span className="text-danger">*</span>
+                </label>{" "}
+                <br />
+                <div className="form-group">
+                  <label htmlFor="">Yes</label> &nbsp;
+                  <input
+                    type="radio"
+                    name="availability"
+                    // className="form-control"
+                    id="productAvailability"
+                    value="True"
+                    defaultChecked
+                    ref={register}
+                    aria-describedby="availabilityHelp"
+                  />
+                  &nbsp; &nbsp; &nbsp;
+                  <label htmlFor="">No</label> &nbsp;
+                  <input
+                    type="radio"
+                    name="availability"
+                    // className="form-control"
+                    id="productAvailability"
+                    value="False"
+                    ref={register}
+                    aria-describedby="availabilityHelp"
+                  />
+                </div>
               </div>
               <button type="submit" className="btn btn-primary">
                 Add Product

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { useForm } from "react-hook-form";
 import { useParams, useHistory } from "react-router-dom";
 
-const EditProduct = ({ products, onUpdate }) => {
+const EditProduct = ({ products, brands, categories, onUpdate }) => {
   const { register, handleSubmit, errors } = useForm();
   let { id } = useParams();
   let history = useHistory();
@@ -11,11 +11,20 @@ const EditProduct = ({ products, onUpdate }) => {
 
   const [currentProduct, setCurrentProduct] = useState(product);
 
-  const onHandleSubmit = () => {
-    onUpdate(currentProduct);
-    history.push("/admin/products");
-    window.alert("Update successfully!!");
-    
+  const onHandleSubmit = (data) => {
+    console.log(data);
+    // let file = data.image[0];
+
+    // let storageRef = firebase.storage().ref(`images/products/${file.name}`);
+    // storageRef.put(file).then(function () {
+    //   storageRef.getDownloadURL().then((url) => {
+    //     setCurrentProduct();
+
+    //     onUpdate(currentProduct);
+    //     history.push("/admin/products");
+    //     window.alert("Update successfully!!");
+    //   });
+    // });
   };
   const onHandleChange = (e) => {
     const { name, value } = e.target;
@@ -41,7 +50,27 @@ const EditProduct = ({ products, onUpdate }) => {
                 className="w-75"
               >
                 <div className="form-group">
-                  <label htmlFor="productName">Name</label>
+                  <label htmlFor="productSKU">
+                    SKU<span className="text-danger">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    name="SKU"
+                    value={currentProduct.SKU}
+                    onChange={onHandleChange}
+                    className="form-control"
+                    id="productSKU"
+                    ref={register({ required: true })}
+                    aria-describedby="nameHelp"
+                  />
+                  <small id="nameHelp" className="form-text text-danger">
+                    {errors.SKU && <span>This field is required</span>}
+                  </small>
+                </div>
+                <div className="form-group">
+                  <label htmlFor="productName">
+                    Name<span className="text-danger">*</span>
+                  </label>
                   <input
                     type="text"
                     name="name"
@@ -49,67 +78,95 @@ const EditProduct = ({ products, onUpdate }) => {
                     onChange={onHandleChange}
                     className="form-control"
                     id="productName"
-                    ref={register({ required: true, minLength: 1 })}
+                    ref={register({
+                      required: true,
+                      pattern: /^[\w\d-]+[\w\d\s-]*$/i,
+                    })}
                     aria-describedby="nameHelp"
                   />
                   <small id="nameHelp" className="form-text text-danger">
                     {errors.name && errors.name.type === "required" && (
                       <span>This field is required</span>
                     )}
-                    {errors.name && errors.name.type === "minLength" && (
-                      <span>Min Length 10</span>
+                    {errors.name && errors.name.type === "pattern" && (
+                      <span>This field is pattern</span>
                     )}
                   </small>
                 </div>
                 <div className="form-group">
-                  <label htmlFor="productBrand">Brand</label>
-                  <input
-                    type="text"
-                    name="brand"
-                    value={currentProduct.brand}
-                    onChange={onHandleChange}
+                  <label htmlFor="productBrandId">
+                    Brand<span className="text-danger">*</span>
+                  </label>
+                  <select
+                    name="brandId"
                     className="form-control"
-                    id="productBrand"
-                    ref={register({ required: true, minLength: 1 })}
-                    aria-describedby="brandHelp"
+                    id="productBrandId"
+                    ref={register}
+                    aria-describedby="brandIdHelp"
+                  >
+                    {brands.map(({ id, name }) => (
+                      <option key={id} value={id}>
+                        {name}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+                <div className="form-group">
+                  <label htmlFor="productRegularPrice">
+                    Regular Price<span className="text-danger">*</span>
+                  </label>
+                  <input
+                    type="number"
+                    // min={0}
+                    step={0.01}
+                    value={currentProduct.regularPrice}
+                    onChange={onHandleChange}
+                    name="regularPrice"
+                    className="form-control"
+                    id="productRegularPrice"
+                    ref={register({ required: true, min: 0 })}
+                    aria-describedby="regularPriceHelp"
                   />
-                  <small id="brandHelp" className="form-text text-danger">
-                    {errors.brand && errors.name.type === "required" && (
-                      <span>This field is required</span>
-                    )}
-                    {errors.brand && errors.name.type === "minLength" && (
-                      <span>Min Length 10</span>
-                    )}
+                  <small
+                    id="regularPriceHelp"
+                    className="form-text text-danger"
+                  >
+                    {errors.regularPrice &&
+                      errors.regularPrice.type === "required" && (
+                        <span>Value must be greater than or equal to 0</span>
+                      )}
+                    {errors.regularPrice &&
+                      errors.regularPrice.type === "min" && (
+                        <span>Value must be greater than or equal to 0</span>
+                      )}
                   </small>
                 </div>
                 <div className="form-group">
-                  <label htmlFor="productPrice">Image</label>
-                  <div className="input-group">
-                    <div className="custom-file">
-                      <input
-                        type="file"
-                        className="custom-file-input"
-                        id="inputGroupFile02"
-                        name="image"
-                      />
-                      <label
-                        className="custom-file-label"
-                        htmlFor="inputGroupFile02"
-                        aria-describedby="imageHelp"
-                      >
-                        Choose image
-                      </label>
-                    </div>
-                  </div>
-                  <small id="imageHelp" className="form-text text-danger">
-                    {errors.image && <span>This field is required</span>}
+                  <label htmlFor="productSalePrice">Sale Price</label>
+                  <input
+                    type="number"
+                    step={0.01}
+                    value={currentProduct.salePrice}
+                    onChange={onHandleChange}
+                    name="salePrice"
+                    className="form-control"
+                    id="productSalePrice"
+                    ref={register({ min: 0 })}
+                    aria-describedby="salePriceHelp"
+                  />
+                  <small id="salePriceHelp" className="form-text text-danger">
+                    
+                    {errors.salePrice && errors.salePrice.type === "min" && (
+                      <span>Value must be greater than or equal to 0</span>
+                    )}
                   </small>
                 </div>
+
                 <div className="form-group">
                   <label htmlFor="productDescription">Description</label>
                   <textarea
-                    rows="4"
-                    cols="50"
+                    type="text"
+                    rows={7}
                     name="description"
                     value={currentProduct.description}
                     onChange={onHandleChange}
@@ -117,113 +174,83 @@ const EditProduct = ({ products, onUpdate }) => {
                     id="productDescription"
                     ref={register({ required: true })}
                     aria-describedby="descriptionHelp"
-                    //   value="Nemo enim ipsam voluptatem quia aspernatur aut odit aut loret fugit, sed quia consequuntur magni lores eos qui ratione voluptatem sequi nesciunt."
                   />
                   <small id="descriptionHelp" className="form-text text-danger">
                     {errors.description && <span>This field is required</span>}
                   </small>
                 </div>
                 <div className="form-group">
-                  <label htmlFor="productPrice">Price</label>
-                  <input
-                    type="text"
-                    name="price"
-                    value={currentProduct.price}
-                    onChange={onHandleChange}
+                  <label htmlFor="productCategoryId">Category</label>
+                  <span className="text-danger">*</span>
+                  <select
+                    name="categoryId"
                     className="form-control"
-                    id="productPrice"
-                    ref={register({ required: true })}
-                    aria-describedby="priceHelp"
-                  />
-                  <small id="priceHelp" className="form-text text-danger">
-                    {errors.price && <span>This field is required</span>}
-                  </small>
+                    id="productCategoryId"
+                    ref={register}
+                    aria-describedby="categoryIdHelp"
+                  >
+                    {categories.map(({ id, name }) => (
+                      <option key={id} value={id}>
+                        {name}
+                      </option>
+                    ))}
+                  </select>
                 </div>
                 <div className="form-group">
-                  <label htmlFor="productAvailability">Availability</label>
+                  <label htmlFor="productImage">Image</label>
                   <input
-                    type="text"
-                    name="availability"
-                    value={currentProduct.availability}
-                    onChange={onHandleChange}
+                    type="file"
+                    name="image"
+                    // defaultValue={currentProduct.image}
                     className="form-control"
-                    id="productAvailability"
-                    ref={register({ required: true })}
-                    aria-describedby="availabilityHelp"
+                    id="productImage"
+                    ref={register()}
+                    aria-describedby="imageHelp"
                   />
-                  <small
-                    id="availabilityHelp"
-                    className="form-text text-danger"
-                  >
-                    {errors.availability && <span>This field is required</span>}
-                  </small>
                 </div>
                 <div className="form-group">
-                  <label htmlFor="productAvailableColor">Available Color</label>
+                  <label htmlFor="productGallery">Gallery</label>
                   <input
-                    type="text"
-                    name="availableColor"
-                    value={currentProduct.availableColor}
-                    onChange={onHandleChange}
+                    type="file"
+                    name="gallery"
+                    multiple
                     className="form-control"
-                    id="productAvailableColor"
-                    ref={register({ required: true })}
-                    aria-describedby="availableColorHelp"
+                    id="productGallery"
+                    aria-describedby="galleryHelp"
                   />
-                  <small
-                    id="availableColorHelp"
-                    className="form-text text-danger"
-                  >
-                    {errors.availableColor && (
-                      <span>This field is required</span>
-                    )}
-                  </small>
                 </div>
                 <div className="form-group">
-                  <label htmlFor="productAvailableSize">Available Size</label>
-                  <input
-                    type="text"
-                    name="availableSize"
-                    value={currentProduct.availableSize}
-                    onChange={onHandleChange}
-                    className="form-control"
-                    id="productAvailableSize"
-                    ref={register({ required: true })}
-                    aria-describedby="availableSizeHelp"
-                  />
-                  <small
-                    id="availableSizeHelp"
-                    className="form-text text-danger"
-                  >
-                    {errors.availableSize && (
-                      <span>This field is required</span>
-                    )}
-                  </small>
-                </div>
-                <div className="form-group">
-                  <label htmlFor="productPromotions">Promotions</label>
-                  <input
-                    type="text"
-                    name="promotions"
-                    value={currentProduct.promotions}
-                    onChange={onHandleChange}
-                    className="form-control"
-                    id="productPromotions"
-                    ref={register({ required: true })}
-                    aria-describedby="productPromotionsHelp"
-                    placeholder="Free shipping"
-                  />
-                  <small
-                    id="productPromotionsHelp"
-                    className="form-text text-danger"
-                  >
-                    {errors.productPromotions && (
-                      <span>This field is required</span>
-                    )}
-                  </small>
+                  <label htmlFor="productAvailability">
+                    Availability<span className="text-danger">*</span>
+                  </label>{" "}
+                  <br />
+                  <div className="form-group">
+                    <label htmlFor="">Yes</label> &nbsp;
+                    <input
+                      type="radio"
+                      name="availability"
+                      // className="form-control"
+                      id="productAvailability"
+                      value="True"
+                      defaultChecked
+                      ref={register}
+                      aria-describedby="availabilityHelp"
+                    />
+                    &nbsp; &nbsp; &nbsp;
+                    <label htmlFor="">No</label> &nbsp;
+                    <input
+                      type="radio"
+                      name="availability"
+                      // className="form-control"
+                      id="productAvailability"
+                      value="False"
+                      ref={register}
+                      aria-describedby="availabilityHelp"
+                    />
+                  </div>
                 </div>
 
-                <button className="btn btn-primary">Cập nhật</button>
+                <button className="btn btn-primary">Update</button>
               </form>
             </div>
           </div>

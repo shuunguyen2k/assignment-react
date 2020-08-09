@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-const ProductDetails = ({ products }) => {
+const ProductDetails = ({ products, brands, categories }) => {
   let { id } = useParams();
   const product = products.find((product) => product.id === id);
   console.log(product);
@@ -83,7 +83,13 @@ const ProductDetails = ({ products }) => {
               <div className="col-lg-6">
                 <div className="product__details__text">
                   <h3>
-                    {product.name} <span>Brand: {product.brand}</span>
+                    {product.name}{" "}
+                    <span>
+                      Brand: &nbsp;
+                      {brands.map(({ id, name }) => {
+                        if (id === product.brandId) return name;
+                      })}
+                    </span>
                   </h3>
                   <div className="rating">
                     <i className="fa fa-star" />
@@ -94,8 +100,8 @@ const ProductDetails = ({ products }) => {
                     <span>( 138 reviews )</span>
                   </div>
                   <div className="product__details__price">
-                    $ {product.price}
-                    {/* <span>$ 83.0</span> */}
+                    $ {product.salePrice}
+                    <span>$ {product.regularPrice}</span>
                   </div>
                   <p>{product.description}</p>
                   <div className="product__details__button">

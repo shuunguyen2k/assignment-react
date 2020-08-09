@@ -3,6 +3,7 @@ import Routers from "./routers";
 import productsApiRequest from "./api/productApi";
 import brandsApiRequest from "./api/brandApi";
 import categoryApiRequest from "./api/categoryApi";
+import shopCartsApiRequest from "./api/shopCartApi";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -46,6 +47,20 @@ function App() {
     getCategories();
   }, []);
 
+  const [shopCarts, setShopCarts] = useState([]);
+  useEffect(() => {
+    const getShopCarts = async () => {
+      try {
+        const { data } = await shopCartsApiRequest.getAll();
+        setShopCarts(data);
+        console.log(data);
+      } catch (error) {
+        console.log("Failed to request API: ", error);
+      }
+    };
+    getShopCarts();
+  }, []);
+
   const onHandleAdd = async (product) => {
     try {
       const { data } = await productsApiRequest.create(product);
@@ -82,6 +97,7 @@ function App() {
           products={products}
           brands={brands}
           categories={categories}
+          shopCarts={shopCarts}
           onAdd={onHandleAdd}
           onRemove={onHandleRemove}
           onUpdate={onHandleUpdate}

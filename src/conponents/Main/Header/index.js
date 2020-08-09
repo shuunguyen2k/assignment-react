@@ -39,9 +39,6 @@ const Header = (props) => {
                     <li>
                       <Link to="/checkOut">Checkout</Link>
                     </li>
-                    <li>
-                      <Link to="/blogDetails">Blog Details</Link>
-                    </li>
                   </ul>
                 </li>
                 <li>
@@ -70,7 +67,7 @@ const Header = (props) => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="#">
+                  <Link to="/shopCart">
                     <span className="icon_bag_alt" />
                     <div className="tip">2</div>
                   </Link>

@@ -50,11 +50,11 @@ const Products = ({ products, brands, categories, onRemove }) => {
                     <td>{product.description}</td>
                     <td>
                       {categories.map(({ id, name }) => {
-                        if (id === product.categoriesId) return name;
+                        if (id === product.categoryId) return name;
                       })}
                     </td>
                     <td>
-                      <img src={product.image} alt="" width={50} />
+                      <img src={product.image} alt="" />
                     </td>
                     <td>{product.gallery}</td>
                     <td>{product.availability}</td>
@@ -67,7 +67,7 @@ const Products = ({ products, brands, categories, onRemove }) => {
                       </Link>
                       <br /><br />
                       <button
-                        className="btn btn-danger ml-3"
+                        className="btn btn-danger"
                         onClick={() => removeHandle(product.id)}
                       >
                         Delete

@@ -350,26 +350,17 @@ const Shop = ({ products }) => {
             </div>
             <div className="col-lg-9 col-md-9">
               <div className="row">
-                {products.map(({ id, name, image, price }, index) => (
-                  // brand,
-                  // description,
-                  // availability,
-                  // availableColor,
-                  // availableSize,
-                  // promotions
+                {products.map((product, index) => (
                   <div className="col-lg-4 col-md-6" key={index}>
                     <div className="product__item">
                       <div
                         className="product__item__pic set-bg"
-                        style={{ backgroundImage: `url(${image})` }}
+                        style={{ backgroundImage: `url(${product.image})` }}
                       >
                         {/* <div className="label new">New</div> */}
                         <ul className="product__hover">
                           <li>
-                            <Link
-                              to="img/shop/shop-1.jpg"
-                              className="image-popup"
-                            >
+                            <Link to="" className="image-popup">
                               <span className="arrow_expand" />
                             </Link>
                           </li>
@@ -379,15 +370,19 @@ const Shop = ({ products }) => {
                             </Link>
                           </li>
                           <li>
-                            <Link to="#">
-                              <span className="icon_bag_alt" />
-                            </Link>
+                            <button style={{border:"none"}}>
+                              <Link to="/shop">
+                                <span className="icon_bag_alt" />
+                              </Link>
+                            </button>
                           </li>
                         </ul>
                       </div>
                       <div className="product__item__text">
                         <h6>
-                          <Link to={`/productDetails/${id}`}>{name}</Link>
+                          <Link to={`/productDetails/${product.id}`}>
+                            {product.name}
+                          </Link>
                         </h6>
                         <div className="rating">
                           <i className="fa fa-star" />
@@ -396,7 +391,10 @@ const Shop = ({ products }) => {
                           <i className="fa fa-star" />
                           <i className="fa fa-star" />
                         </div>
-                        <div className="product__price">$ {price}</div>
+                        <div className="product__price">
+                          $ {product.salePrice}
+                          <span>$ {product.regularPrice}</span>{" "}
+                        </div>
                       </div>
                     </div>
                   </div>
