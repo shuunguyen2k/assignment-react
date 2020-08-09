@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const ShopCart = ({ products, shopCarts }) => {
   console.log(shopCarts);
   const [currentShopCart, setCurrentShopCart] = useState(
-    shopCarts[shopCarts.length()]
+    // shopCarts[shopCarts.length()]
   );
   return (
     <div>
