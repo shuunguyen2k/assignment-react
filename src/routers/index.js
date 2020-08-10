@@ -9,6 +9,8 @@ import Dashboard from "../pages/views/Admin/Dashboard";
 import Products from "../pages/views/Admin/Products";
 import AddProduct from "../pages/views/Admin/AddProduct";
 import EditProduct from "../pages/views/Admin/EditProduct";
+import Blogs from "../pages/views/Admin/Blogs";
+import AddBlog from "../pages/views/Admin/AddBlog";
 
 import Home from "../pages/views/Main/Home";
 import Shop from "../pages/views/Main/Shop";
@@ -23,20 +25,36 @@ const Routers = ({
   brands,
   categories,
   shopCarts,
+  blogs,
   onRemove,
   onAdd,
   onUpdate,
+  onRemoveBlog,
+  onAddBlog,
+  onUpdateBlog,
 }) => {
   const onHandleAdd = (product) => {
     onAdd(product);
   };
 
-  const onHandleUpdate = (id, product) => {
-    onUpdate(id, product);
+  const onHandleUpdate = (product) => {
+    onUpdate(product);
   };
 
   const onHandleRemove = (id) => {
     onRemove(id);
+  };
+
+  const onHandleAddBlog = (blog) => {
+    onAddBlog(blog);
+  };
+
+  const onHandleUpdateBlog = (blog) => {
+    onUpdateBlog(blog);
+  };
+
+  const onHandleRemoveBlog = (id) => {
+    onRemoveBlog(id);
   };
 
   return (
@@ -46,7 +64,7 @@ const Routers = ({
           <LayoutAdmin>
             <Switch>
               <Route path="/admin" exact>
-                <Dashboard products={products} />
+                <Dashboard products={products} blogs={blogs} />
               </Route>
               <Route
                 path="/admin/products"
@@ -67,7 +85,7 @@ const Routers = ({
                     {...props}
                     brands={brands}
                     categories={categories}
-                    onAdd={onAdd}
+                    onAdd={onHandleAdd}
                   />
                 )}
               ></Route>
@@ -82,6 +100,14 @@ const Routers = ({
                     onUpdate={onHandleUpdate}
                   />
                 )}
+              ></Route>
+              <Route
+                path="/admin/blogs"
+                render={(props) => <Blogs {...props} blogs={blogs} onRemoveBlog={onHandleRemoveBlog} />}
+              ></Route>
+              <Route
+                path="/admin/blog/add"
+                render={(props) => <AddBlog {...props} onAddBlog={onHandleAddBlog} />}
               ></Route>
             </Switch>
           </LayoutAdmin>
@@ -102,9 +128,16 @@ const Routers = ({
                   categories={categories}
                 />
               </Route>
-              <Route path="/shopCart">
-                <ShopCart products={products} shopCarts={shopCarts} />
-              </Route>
+              <Route
+                path="/shopCart"
+                render={(props) => (
+                  <ShopCart
+                    {...props}
+                    products={products}
+                    shopCarts={shopCarts}
+                  />
+                )}
+              ></Route>
               <Route path="/checkOut">
                 <CheckOut />
               </Route>

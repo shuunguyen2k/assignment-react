@@ -10,7 +10,7 @@
       "salePrice": "59.28",
       "description": "Balmain continues to introduce a youthful energy to the brand’s classic silhouettes. Expect expert craftsmanship and premium materials blended with sports-inspired elements and a contemporary finish. Crafted from pure cotton, this logo print T-shirt from Balmain is all about timeless design. Featuring a ribbed round neck, short sleeves, a printed logo to the front and a straight hem.",
       "categoryId": "1",
-      "image": "https://firebasestorage.googleapis.com/v0/b/react-basic-1d16b.appspot.com/o/images%2Fproducts%2Fbalmain-t-shirts-vests-mens-logo-print-t-shirt-white-5.jpg?alt=media&token=97868aa6-45c3-45dd-94d6-b85918c49832",
+      "image": "https://firebasestorage.googleapis.com/v0/b/react-basic-1d16b.appspot.com/o/images%2Fproducts%2Fbalmain-t-shirts-vests-mens-logo-print-t-shirt-white-5.jpg?alt=media&token=cdeddf30-8340-415a-95ac-53a4ba5f01d4",
       "gallery": "",
       "availability": "true"
     },
@@ -254,17 +254,33 @@
       "name": "Womens"
     }
   ],
-  "shopCarts": {
-    "id": 1,
-    "products": [
-      {
-        "productId": "1",
-        "quatity": "1"
-      },
-      {
-        "productId": "2",
-        "quantity": "3"
-      }
-    ]
-  }
+  "shopCarts": [
+    {
+      "shopCartId": "1",
+      "arrShopCart": [
+        {
+          "productId": "1",
+          "quatity": "1"
+        },
+        {
+          "productId": "2",
+          "quantity": "3"
+        }
+      ]
+    },
+    {
+      "shopCartId": "2",
+      "arrShopCart": [
+        {
+          "productId": "1",
+          "quatity": "1"
+        },
+        {
+          "productId": "2",
+          "quantity": "3"
+        }
+      ]
+    }
+  ],
+  "blogs": []
 }

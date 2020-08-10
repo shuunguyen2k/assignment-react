@@ -3,10 +3,28 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 const ShopCart = ({ products, shopCarts }) => {
-  console.log(shopCarts);
-  const [currentShopCart, setCurrentShopCart] = useState(
-    // shopCarts[shopCarts.length()]
+  const shopCartId = shopCarts.length - 1;
+  const [shopCart, setShopCart] = useState(shopCarts[shopCartId]);
+
+  const arr = shopCart.arrShopCart;
+  
+
+  const arr2 = arr.map(({ productId, quatity }) =>
+    products.find((product) => product.id === productId)
   );
+
+  const arr3 = arr2.map((product, index) => {
+    return {...product};
+  });
+
+  console.log(arr3);
+
+  // const [currentArrShopCart, setCurrentArrShopCart] = useState(arr);
+  // console.log(arr);
+  // const { id, shopCart } = shopCarts[id1];
+
+  // const [currentShopCart, setCurrentShopCart] = useState(shopCart);
+  // console.log(currentShopCart);
   return (
     <div>
       {/* Breadcrumb Begin */}
@@ -43,106 +61,36 @@ const ShopCart = ({ products, shopCarts }) => {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td className="cart__product__item">
-                        <img src="img/shop-cart/cp-1.jpg" alt="" />
-                        <div className="cart__product__item__title">
-                          <h6>Chain bucket bag</h6>
-                          <div className="rating">
-                            <i className="fa fa-star" />
-                            <i className="fa fa-star" />
-                            <i className="fa fa-star" />
-                            <i className="fa fa-star" />
-                            <i className="fa fa-star" />
+                    {arr2.map((product, index) => (
+                      <tr key={index}>
+                        <td className="cart__product__item">
+                          <img src={product.image} alt="" width={50} />
+                          <div className="cart__product__item__title">
+                            <h6>{product.name}</h6>
+                            <div className="rating">
+                              <i className="fa fa-star" />
+                              <i className="fa fa-star" />
+                              <i className="fa fa-star" />
+                              <i className="fa fa-star" />
+                              <i className="fa fa-star" />
+                            </div>
                           </div>
-                        </div>
-                      </td>
-                      <td className="cart__price">$ 150.0</td>
-                      <td className="cart__quantity">
-                        <div className="pro-qty">
-                          <input type="text" defaultValue={1} />
-                        </div>
-                      </td>
-                      <td className="cart__total">$ 300.0</td>
-                      <td className="cart__close">
-                        <span className="icon_close" />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="cart__product__item">
-                        <img src="img/shop-cart/cp-2.jpg" alt="" />
-                        <div className="cart__product__item__title">
-                          <h6>Zip-pockets pebbled tote briefcase</h6>
-                          <div className="rating">
-                            <i className="fa fa-star" />
-                            <i className="fa fa-star" />
-                            <i className="fa fa-star" />
-                            <i className="fa fa-star" />
-                            <i className="fa fa-star" />
+                        </td>
+                        <td className="cart__price">$ {product.salePrice}</td>
+                        <td className="cart__quantity">
+                          <div className="pro-qty">
+                            <input
+                              type="number"
+                              defaultValue={1}
+                            />
                           </div>
-                        </div>
-                      </td>
-                      <td className="cart__price">$ 170.0</td>
-                      <td className="cart__quantity">
-                        <div className="pro-qty">
-                          <input type="text" defaultValue={1} />
-                        </div>
-                      </td>
-                      <td className="cart__total">$ 170.0</td>
-                      <td className="cart__close">
-                        <span className="icon_close" />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="cart__product__item">
-                        <img src="img/shop-cart/cp-3.jpg" alt="" />
-                        <div className="cart__product__item__title">
-                          <h6>Black jean</h6>
-                          <div className="rating">
-                            <i className="fa fa-star" />
-                            <i className="fa fa-star" />
-                            <i className="fa fa-star" />
-                            <i className="fa fa-star" />
-                            <i className="fa fa-star" />
-                          </div>
-                        </div>
-                      </td>
-                      <td className="cart__price">$ 85.0</td>
-                      <td className="cart__quantity">
-                        <div className="pro-qty">
-                          <input type="text" defaultValue={1} />
-                        </div>
-                      </td>
-                      <td className="cart__total">$ 170.0</td>
-                      <td className="cart__close">
-                        <span className="icon_close" />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="cart__product__item">
-                        <img src="img/shop-cart/cp-4.jpg" alt="" />
-                        <div className="cart__product__item__title">
-                          <h6>Cotton Shirt</h6>
-                          <div className="rating">
-                            <i className="fa fa-star" />
-                            <i className="fa fa-star" />
-                            <i className="fa fa-star" />
-                            <i className="fa fa-star" />
-                            <i className="fa fa-star" />
-                          </div>
-                        </div>
-                      </td>
-                      <td className="cart__price">$ 55.0</td>
-                      <td className="cart__quantity">
-                        <div className="pro-qty">
-                          <input type="text" defaultValue={1} />
-                        </div>
-                      </td>
-                      <td className="cart__total">$ 110.0</td>
-                      <td className="cart__close">
-                        <span className="icon_close" />
-                      </td>
-                    </tr>
+                        </td>
+                        <td className="cart__total">$ 300.0</td>
+                        <td className="cart__close">
+                          <span className="icon_close" />
+                        </td>
+                      </tr>
+                    ))}
                   </tbody>
                 </table>
               </div>

@@ -35,6 +35,12 @@ const Sidebar = (props) => {
           <span>Product Manager</span>
         </Link>
       </li>
+      <li className="nav-item">
+        <Link className="nav-link" to="/admin/blogs">
+          <i className="fas fa-fw fa-tachometer-alt" />
+          <span>Blog Manager</span>
+        </Link>
+      </li>
       <hr className="sidebar-divider d-none d-md-block" />
       {/* Sidebar Toggler (Sidebar) */}
       <div className="text-center d-none d-md-inline">

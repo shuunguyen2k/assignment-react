@@ -9,7 +9,7 @@ const Products = ({ products, brands, categories, onRemove }) => {
   return (
     <div>
       <div className="d-flex justify-content-between align-items-center mb-4">
-        <h1 className="h3 mb-2 text-gray-800">Quản lý sản phẩm</h1>
+        <h1 className="h3 mb-2 text-gray-800">Product Manager</h1>
         <Link to="/admin/product/add" className="btn btn-primary">
           Add New Product
         </Link>

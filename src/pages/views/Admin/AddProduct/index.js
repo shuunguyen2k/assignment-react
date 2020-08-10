@@ -9,7 +9,7 @@ const AddProduct = ({ brands, categories, onAdd }) => {
   let history = useHistory();
 
   const onHandleSubmit = (data) => {
-    // console.log(data.image[0]);
+    console.log(data.image[0]);
     let file = data.image[0];
     let storageRef = firebase.storage().ref(`images/products/${file.name}`);
     storageRef.put(file).then(function () {
@@ -128,7 +128,7 @@ const AddProduct = ({ brands, categories, onAdd }) => {
                   name="salePrice"
                   className="form-control"
                   id="productSalePrice"
-                  // ref={register({ required: true })}
+                  ref={register}
                   aria-describedby="nameHelp"
                 />
               </div>
