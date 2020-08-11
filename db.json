@@ -213,35 +213,43 @@
   "brands": [
     {
       "id": "1",
-      "name": "ALEXANDER MCQUEEN"
+      "name": "ALEXANDER MCQUEEN",
+      "image": "https://firebasestorage.googleapis.com/v0/b/react-basic-1d16b.appspot.com/o/images%2Fbrands%2Falexander-mcqueen.jpg?alt=media&token=076691b2-5f6f-48ca-97b4-039824333908"
     },
     {
       "id": "2",
-      "name": "BALMAIN"
+      "name": "BALMAIN",
+      "image": "https://firebasestorage.googleapis.com/v0/b/react-basic-1d16b.appspot.com/o/images%2Fbrands%2Fbalmain.jpg?alt=media&token=a2e17609-6065-4b29-a9b2-c541fb146023"
     },
     {
       "id": "3",
-      "name": "BRUNELLO CUCINELLI"
+      "name": "BRUNELLO CUCINELLI",
+      "image": "https://firebasestorage.googleapis.com/v0/b/react-basic-1d16b.appspot.com/o/images%2Fbrands%2Fbrunello-cucinelli.jpg?alt=media&token=64e8173d-bcee-4828-9c0a-f344a211a3b5"
     },
     {
       "id": "4",
-      "name": "EMPORIO ARAMANI"
+      "name": "EMPORIO ARMANI",
+      "image": "https://firebasestorage.googleapis.com/v0/b/react-basic-1d16b.appspot.com/o/images%2Fbrands%2Femporio-armani.jpg?alt=media&token=cee821e8-53cc-46bc-988e-53ad095548e4"
     },
     {
       "id": "5",
-      "name": "ETRO"
+      "name": "ETRO",
+      "image": "https://firebasestorage.googleapis.com/v0/b/react-basic-1d16b.appspot.com/o/images%2Fbrands%2Fetro.jpg?alt=media&token=b46b4466-8063-48ec-b2c9-b4d3e0eb96ac"
     },
     {
       "id": "6",
-      "name": "GIVECHY"
+      "name": "GIVECHY",
+      "image": "https://firebasestorage.googleapis.com/v0/b/react-basic-1d16b.appspot.com/o/images%2Fbrands%2Fgivenchy.jpg?alt=media&token=d773469c-fba0-4d1f-bbef-f0eb2e5ad863"
     },
     {
       "id": "7",
-      "name": "MAISON MARGIELA"
+      "name": "MAISON MARGIELA",
+      "image": "https://firebasestorage.googleapis.com/v0/b/react-basic-1d16b.appspot.com/o/images%2Fbrands%2Fmaison-margiela.jpg?alt=media&token=d8c7482f-fa26-4953-842e-3464ff42c477"
     },
     {
       "id": "8",
-      "name": "MSGM"
+      "name": "MSGM",
+      "image": "https://firebasestorage.googleapis.com/v0/b/react-basic-1d16b.appspot.com/o/images%2Fbrands%2Fmsgm.jpg?alt=media&token=9d61e779-7139-470b-93f5-d0295aec9ed7"
     }
   ],
   "categories": [
@@ -254,33 +262,15 @@
       "name": "Womens"
     }
   ],
-  "shopCarts": [
+  "shopCarts": [],
+  "blogs": [
     {
-      "shopCartId": "1",
-      "arrShopCart": [
-        {
-          "productId": "1",
-          "quatity": "1"
-        },
-        {
-          "productId": "2",
-          "quantity": "3"
-        }
-      ]
-    },
-    {
-      "shopCartId": "2",
-      "arrShopCart": [
-        {
-          "productId": "1",
-          "quatity": "1"
-        },
-        {
-          "productId": "2",
-          "quantity": "3"
-        }
-      ]
+      "id": "kn62te2bl",
+      "title": "a",
+      "content": "a",
+      "author": "a",
+      "image": "https://firebasestorage.googleapis.com/v0/b/react-basic-1d16b.appspot.com/o/images%2Fblogs%2Fblog-2.jpg?alt=media&token=4c2ca9ea-e0ff-49e9-ae46-f97504f4f7c7",
+      "date": "2020-08-11"
     }
-  ],
-  "blogs": []
+  ]
 }

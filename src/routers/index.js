@@ -11,6 +11,10 @@ import AddProduct from "../pages/views/Admin/AddProduct";
 import EditProduct from "../pages/views/Admin/EditProduct";
 import Blogs from "../pages/views/Admin/Blogs";
 import AddBlog from "../pages/views/Admin/AddBlog";
+import EditBlog from "../pages/views/Admin/EditBlog";
+import Brands from "../pages/views/Admin/Brands";
+import AddBrand from "../pages/views/Admin/AddBrand";
+import EditBrand from "../pages/views/Admin/EditBrand";
 
 import Home from "../pages/views/Main/Home";
 import Shop from "../pages/views/Main/Shop";
@@ -26,33 +30,42 @@ const Routers = ({
   categories,
   shopCarts,
   blogs,
-  onRemove,
   onAdd,
   onUpdate,
-  onRemoveBlog,
+  onRemove,
+  onAddBrand,
+  onUpdateBrand,
+  onRemoveBrand,
   onAddBlog,
   onUpdateBlog,
+  onRemoveBlog,
 }) => {
   const onHandleAdd = (product) => {
     onAdd(product);
   };
-
   const onHandleUpdate = (product) => {
     onUpdate(product);
   };
-
   const onHandleRemove = (id) => {
     onRemove(id);
+  };
+
+  const onHandleAddBrand = (brand) => {
+    onAddBrand(brand);
+  };
+  const onHandleUpdateBrand = (brand) => {
+    onUpdateBrand(brand);
+  };
+  const onHandleRemoveBrand = (id) => {
+    onRemoveBrand(id);
   };
 
   const onHandleAddBlog = (blog) => {
     onAddBlog(blog);
   };
-
   const onHandleUpdateBlog = (blog) => {
     onUpdateBlog(blog);
   };
-
   const onHandleRemoveBlog = (id) => {
     onRemoveBlog(id);
   };
@@ -64,7 +77,12 @@ const Routers = ({
           <LayoutAdmin>
             <Switch>
               <Route path="/admin" exact>
-                <Dashboard products={products} blogs={blogs} />
+                <Dashboard
+                  products={products}
+                  blogs={blogs}
+                  brands={brands}
+                  categories={categories}
+                />
               </Route>
               <Route
                 path="/admin/products"
@@ -102,12 +120,56 @@ const Routers = ({
                 )}
               ></Route>
               <Route
+                path="/admin/brands"
+                render={(props) => (
+                  <Brands
+                    {...props}
+                    brands={brands}
+                    onRemoveBrand={onHandleRemoveBrand}
+                  />
+                )}
+              ></Route>
+              <Route
+                path="/admin/brand/add"
+                render={(props) => (
+                  <AddBrand
+                    {...props}
+                    brands={brands}
+                    onAddBrand={onHandleAddBrand}
+                  />
+                )}
+              ></Route>
+              <Route
+                path="/admin/brand/:id"
+                render={(props) => (
+                  <EditBrand {...props} onUpdateBrand={onHandleUpdateBrand} />
+                )}
+              ></Route>
+              <Route
                 path="/admin/blogs"
-                render={(props) => <Blogs {...props} blogs={blogs} onRemoveBlog={onHandleRemoveBlog} />}
+                render={(props) => (
+                  <Blogs
+                    {...props}
+                    blogs={blogs}
+                    onRemoveBlog={onHandleRemoveBlog}
+                  />
+                )}
               ></Route>
               <Route
                 path="/admin/blog/add"
-                render={(props) => <AddBlog {...props} onAddBlog={onHandleAddBlog} />}
+                render={(props) => (
+                  <AddBlog {...props} onAddBlog={onHandleAddBlog} />
+                )}
+              ></Route>
+              <Route
+                path="/admin/blog/:id"
+                render={(props) => (
+                  <EditBlog
+                    {...props}
+                    blogs={blogs}
+                    onUpdateBlog={onHandleUpdateBlog}
+                  />
+                )}
               ></Route>
             </Switch>
           </LayoutAdmin>
@@ -119,7 +181,11 @@ const Routers = ({
                 <Home />
               </Route>
               <Route path="/shop">
-                <Shop products={products} />
+                <Shop
+                  products={products}
+                  brands={brands}
+                  categories={categories}
+                />
               </Route>
               <Route path="/productDetails/:id">
                 <ProductDetails

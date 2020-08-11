@@ -15,7 +15,6 @@ const EditProduct = ({ products, brands, categories, onUpdate }) => {
   const onHandleSubmit = (e) => {
     e.preventDefault();
     console.log(currentProduct);
-
     onUpdate(currentProduct);
     history.push('/admin/products');
   };

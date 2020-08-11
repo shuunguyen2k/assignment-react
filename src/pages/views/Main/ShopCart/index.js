@@ -2,29 +2,10 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
-const ShopCart = ({ products, shopCarts }) => {
-  const shopCartId = shopCarts.length - 1;
-  const [shopCart, setShopCart] = useState(shopCarts[shopCartId]);
+const ShopCart = ({ products }) => {
+  console.log(localStorage);
 
-  const arr = shopCart.arrShopCart;
-  
 
-  const arr2 = arr.map(({ productId, quatity }) =>
-    products.find((product) => product.id === productId)
-  );
-
-  const arr3 = arr2.map((product, index) => {
-    return {...product};
-  });
-
-  console.log(arr3);
-
-  // const [currentArrShopCart, setCurrentArrShopCart] = useState(arr);
-  // console.log(arr);
-  // const { id, shopCart } = shopCarts[id1];
-
-  // const [currentShopCart, setCurrentShopCart] = useState(shopCart);
-  // console.log(currentShopCart);
   return (
     <div>
       {/* Breadcrumb Begin */}
@@ -60,7 +41,7 @@ const ShopCart = ({ products, shopCarts }) => {
                       <th />
                     </tr>
                   </thead>
-                  <tbody>
+                  {/* <tbody>
                     {arr2.map((product, index) => (
                       <tr key={index}>
                         <td className="cart__product__item">
@@ -79,10 +60,7 @@ const ShopCart = ({ products, shopCarts }) => {
                         <td className="cart__price">$ {product.salePrice}</td>
                         <td className="cart__quantity">
                           <div className="pro-qty">
-                            <input
-                              type="number"
-                              defaultValue={1}
-                            />
+                            <input type="number" defaultValue={1} />
                           </div>
                         </td>
                         <td className="cart__total">$ 300.0</td>
@@ -91,7 +69,7 @@ const ShopCart = ({ products, shopCarts }) => {
                         </td>
                       </tr>
                     ))}
-                  </tbody>
+                  </tbody> */}
                 </table>
               </div>
             </div>
@@ -99,7 +77,7 @@ const ShopCart = ({ products, shopCarts }) => {
           <div className="row">
             <div className="col-lg-6 col-md-6 col-sm-6">
               <div className="cart__btn">
-                <Link to="#">Continue Shopping</Link>
+                <Link to="/shop">Continue Shopping</Link>
               </div>
             </div>
             <div className="col-lg-6 col-md-6 col-sm-6">

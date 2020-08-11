@@ -21,7 +21,6 @@ const AddProduct = ({ brands, categories, onAdd }) => {
         };
         onAdd(newData);
         history.push("/admin/products");
-        window.alert("Add Successfully!!");
       });
     });
   };

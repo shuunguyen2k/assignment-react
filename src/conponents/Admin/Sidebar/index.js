@@ -36,6 +36,18 @@ const Sidebar = (props) => {
         </Link>
       </li>
       <li className="nav-item">
+        <Link className="nav-link" to="/admin/brands">
+          <i className="fas fa-fw fa-tachometer-alt" />
+          <span>Brand Manager</span>
+        </Link>
+      </li>
+      <li className="nav-item">
+        <Link className="nav-link" to="/admin/categories">
+          <i className="fas fa-fw fa-tachometer-alt" />
+          <span>Category Manager</span>
+        </Link>
+      </li>
+      <li className="nav-item">
         <Link className="nav-link" to="/admin/blogs">
           <i className="fas fa-fw fa-tachometer-alt" />
           <span>Blog Manager</span>

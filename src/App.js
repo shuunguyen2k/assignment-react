@@ -20,6 +20,34 @@ function App() {
     };
     getProducts();
   }, []);
+  const onHandleAdd = async (product) => {
+    try {
+      const { data } = await productsApiRequest.create(product);
+      setProducts([...products, data]);
+      window.alert("Add Successfully!!");
+    } catch (error) {
+      console.log("failed to request API: ", error);
+    }
+  };
+  const onHandleUpdate = (updateProduct) => {
+    const newProducts = products.map(
+      (product) => (product.id === updateProduct.id ? updateProduct : product) // Nếu product.id bằng với id của sản phẩm vừa chỉnh sửa thì trả về mảng có object mới
+    );
+    // localStorage.setItem("products", JSON.stringify(newProducts));
+    setProducts(newProducts);
+    window.alert("Update successfully!!");
+    productsApiRequest.update(updateProduct.id, updateProduct);
+  };
+  const onHandleRemove = async (id) => {
+    try {
+      const { data } = await productsApiRequest.remove(id);
+      const newProducts = products.filter((product) => product.id !== id);
+      setProducts(newProducts);
+      window.alert("Delete Successfully!!");
+    } catch (error) {
+      console.log("failed to request API: ", error);
+    }
+  };
 
   const [brands, setBrands] = useState([]);
   useEffect(() => {
@@ -33,6 +61,34 @@ function App() {
     };
     getBrands();
   }, []);
+  const onHandleAddBrand = async (brand) => {
+    try {
+      const { data } = await brandsApiRequest.create(brand);
+      setBrands([...brands, data]);
+      window.alert("Add Successfully!!");
+    } catch (error) {
+      console.log("failed to request API: ", error);
+    }
+  };
+  const onHandleUpdateBrand = (updateBrand) => {
+    const newBrands = brands.map(
+      (brand) => (brand.id === updateBrand.id ? updateBrand : brand) // Nếu product.id bằng với id của sản phẩm vừa chỉnh sửa thì trả về mảng có object mới
+    );
+    // localStorage.setItem("products", JSON.stringify(newProducts));
+    setBrands(newBrands);
+    window.alert("Update successfully!!");
+    brandsApiRequest.update(updateBrand.id, updateBrand);
+  };
+  const onHandleRemoveBrand = async (id) => {
+    try {
+      const { data } = await brandsApiRequest.remove(id);
+      const newBrands = brands.filter((brand) => brand.id !== id);
+      setBrands(newBrands);
+      window.alert("Delete Successfully!!");
+    } catch (error) {
+      console.log("failed to request API: ", error);
+    }
+  };
 
   const [categories, setCategories] = useState([]);
   useEffect(() => {
@@ -74,53 +130,24 @@ function App() {
     getBlogs();
   }, []);
 
-  const onHandleAdd = async (product) => {
-    try {
-      const { data } = await productsApiRequest.create(product);
-      setProducts([...products, data]);
-    } catch (error) {
-      console.log("failed to request API: ", error);
-    }
-  };
-
-  const onHandleUpdate = (updateProduct) => {
-    const newProducts = products.map(
-      (product) => (product.id === updateProduct.id ? updateProduct : product) // Nếu product.id bằng với id của sản phẩm vừa chỉnh sửa thì trả về mảng có object mới
-    );
-    // localStorage.setItem("products", JSON.stringify(newProducts));
-    setProducts(newProducts);
-    productsApiRequest.update(updateProduct.id, updateProduct);
-  };
-
-  const onHandleRemove = async (id) => {
-    try {
-      const { data } = await productsApiRequest.remove(id);
-      const newProducts = products.filter((product) => product.id !== id);
-      setProducts(newProducts);
-      window.alert("Delete Successfully!!");
-    } catch (error) {
-      console.log("failed to request API: ", error);
-    }
-  };
-
   const onHandleAddBlog = async (blog) => {
     try {
       const { data } = await blogApiRequest.create(blog);
-      setBlogs([...blog, data]);
+      setBlogs([...blogs, data]);
+      window.alert("Add Successfully!!");
     } catch (error) {
       console.log("failed to request API: ", error);
     }
   };
-
   const onHandleUpdateBlog = (updateBlog) => {
     const newBlogs = blogs.map(
       (blog) => (blog.id === updateBlog.id ? updateBlog : blog) // Nếu product.id bằng với id của sản phẩm vừa chỉnh sửa thì trả về mảng có object mới
     );
     // localStorage.setItem("products", JSON.stringify(newProducts));
     setBlogs(newBlogs);
+    window.alert("Update successfully!!");
     blogApiRequest.update(updateBlog.id, updateBlog);
   };
-
   const onHandleRemoveBlog = async (id) => {
     try {
       const { data } = await blogApiRequest.remove(id);
@@ -134,21 +161,22 @@ function App() {
 
   return (
     <div className="App">
-      <div className="App">
-        <Routers
-          products={products}
-          brands={brands}
-          categories={categories}
-          shopCarts={shopCarts}
-          blogs={blogs}
-          onAdd={onHandleAdd}
-          onRemove={onHandleRemove}
-          onUpdate={onHandleUpdate}
-          onAddBlog={onHandleAddBlog}
-          onRemoveBlog={onHandleRemoveBlog}
-          onUpdateBlog={onHandleUpdateBlog}
-        />
-      </div>
+      <Routers
+        products={products}
+        brands={brands}
+        categories={categories}
+        shopCarts={shopCarts}
+        blogs={blogs}
+        onAdd={onHandleAdd}
+        onRemove={onHandleRemove}
+        onUpdate={onHandleUpdate}
+        onAddBrand={onHandleAddBrand}
+        onRemoveBrand={onHandleRemoveBrand}
+        onUpdateBrand={onHandleUpdateBrand}
+        onAddBlog={onHandleAddBlog}
+        onRemoveBlog={onHandleRemoveBlog}
+        onUpdateBlog={onHandleUpdateBlog}
+      />
     </div>
   );
 }

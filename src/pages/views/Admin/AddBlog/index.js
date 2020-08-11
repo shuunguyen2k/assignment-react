@@ -22,7 +22,6 @@ const AddBlog = ({ onAddBlog }) => {
         // console.log(newData)
         onAddBlog(newData);
         history.push("/admin/blogs");
-        window.alert("Add Successfully!!");
       });
     });
   };
@@ -32,7 +31,7 @@ const AddBlog = ({ onAddBlog }) => {
         <div className="row">
           <div className="col-lg-3 col-md-3">
             <div className="section-title">
-              <h4>Add Product</h4>
+              <h4>Add blog</h4>
             </div>
           </div>
           <div className="col-lg-9 col-md-9">
@@ -137,7 +136,7 @@ const AddBlog = ({ onAddBlog }) => {
                 </small>
               </div>
               <button type="submit" className="btn btn-primary">
-                Add Product
+                Add Blog
               </button>
             </form>
           </div>

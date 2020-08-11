@@ -1,22 +1,95 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
-const Shop = ({ products }) => {
+const Shop = ({ products, brands, categories }) => {
+  const [shops, setshops] = useState(products);
+  const [breadcrumb, setBreadcrumb] = useState(
+    <div className="breadcrumb__links">
+      <Link to="/">
+        <i className="fa fa-home" />
+        Home
+      </Link>
+      <span>Shop</span>
+    </div>
+  );
+
+  const addToCart = (product) => {
+    if (typeof Storage !== "undefined") {
+      if (localStorage.getItem(`${product.id}`) === null) {
+        localStorage.setItem(`${product.id}`, 1);
+      } else {
+        localStorage.setItem(
+          `${product.id}`,
+          Number(localStorage.getItem(`${product.id}`)) + 1
+        );
+      }
+      alert("Add to cart successfully!!");
+    } else {
+      alert("Add to cart fail!!");
+    }
+  };
+
+  const onHandleClick = (category, brand) => {
+    setshops(
+      products.filter(
+        (product) =>
+          product.categoryId === category.id && product.brandId === brand.id
+      )
+    );
+    setBreadcrumb(
+      <div className="breadcrumb__links">
+        <Link to="/">
+          <i className="fa fa-home" />
+          Home
+        </Link>
+        <Link to="/shop" onClick={onHandleClick3}>
+          Shop
+        </Link>
+        <Link to="#" onClick={() => onHandleClick2(category)}>
+          {category.name}
+        </Link>
+        <span>{brand.name}</span>
+      </div>
+    );
+  };
+
+  const onHandleClick2 = (category) => {
+    setshops(products.filter((product) => product.categoryId === category.id));
+    setBreadcrumb(
+      <div className="breadcrumb__links">
+        <Link to="/">
+          <i className="fa fa-home" />
+          Home
+        </Link>
+        <Link to="/shop" onClick={onHandleClick3}>
+          Shop
+        </Link>
+        <span>{category.name}</span>
+      </div>
+    );
+  };
+
+  const onHandleClick3 = () => {
+    setshops(products);
+    setBreadcrumb(
+      <div className="breadcrumb__links">
+        <Link to="/">
+          <i className="fa fa-home" />
+          Home
+        </Link>
+        <span>Shop</span>
+      </div>
+    );
+  };
+
   return (
     <div>
       {/* Breadcrumb Begin */}
       <div className="breadcrumb-option">
         <div className="container">
           <div className="row">
-            <div className="col-lg-12">
-              <div className="breadcrumb__links">
-                <Link to="/">
-                  <i className="fa fa-home" /> Home
-                </Link>
-                <span>Shop</span>
-              </div>
-            </div>
+            <div className="col-lg-12">{breadcrumb}</div>
           </div>
         </div>
       </div>
@@ -34,204 +107,46 @@ const Shop = ({ products }) => {
                   </div>
                   <div className="categories__accordion">
                     <div className="accordion" id="accordionExample">
-                      <div className="card">
-                        <div className="card-heading active">
-                          <Link
-                            to="#"
-                            data-toggle="collapse"
-                            data-target="#collapseOne"
+                      {categories.map((category, index) => (
+                        <div className="card" key={index}>
+                          <div className="card-heading active">
+                            <Link
+                              to="#"
+                              data-toggle="collapse"
+                              data-target="#collapseOne"
+                              onClick={() => onHandleClick2(category)}
+                            >
+                              {category.name}
+                            </Link>
+                          </div>
+                          <div
+                            id="collapseOne"
+                            className="collapse show"
+                            data-parent="#accordionExample"
                           >
-                            Women
-                          </Link>
-                        </div>
-                        <div
-                          id="collapseOne"
-                          className="collapse show"
-                          data-parent="#accordionExample"
-                        >
-                          <div className="card-body">
-                            <ul>
-                              <li>
-                                <Link to="#">Coats</Link>
-                              </li>
-                              <li>
-                                <Link to="#">Jackets</Link>
-                              </li>
-                              <li>
-                                <Link to="#">Dresses</Link>
-                              </li>
-                              <li>
-                                <Link to="#">Shirts</Link>
-                              </li>
-                              <li>
-                                <Link to="#">T-shirts</Link>
-                              </li>
-                              <li>
-                                <Link to="#">Jeans</Link>
-                              </li>
-                            </ul>
+                            <div className="card-body">
+                              <ul>
+                                {brands.map((brand, index) => (
+                                  <li key={index}>
+                                    <Link
+                                      to="#"
+                                      onClick={() =>
+                                        onHandleClick(category, brand)
+                                      }
+                                    >
+                                      {brand.name}
+                                    </Link>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                      <div className="card">
-                        <div className="card-heading">
-                          <Link
-                            to="#"
-                            data-toggle="collapse"
-                            data-target="#collapseTwo"
-                          >
-                            Men
-                          </Link>
-                        </div>
-                        <div
-                          id="collapseTwo"
-                          className="collapse"
-                          data-parent="#accordionExample"
-                        >
-                          <div className="card-body">
-                            <ul>
-                              <li>
-                                <Link to="#">Coats</Link>
-                              </li>
-                              <li>
-                                <Link to="#">Jackets</Link>
-                              </li>
-                              <li>
-                                <Link to="#">Dresses</Link>
-                              </li>
-                              <li>
-                                <Link to="#">Shirts</Link>
-                              </li>
-                              <li>
-                                <Link to="#">T-shirts</Link>
-                              </li>
-                              <li>
-                                <Link to="#">Jeans</Link>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="card">
-                        <div className="card-heading">
-                          <Link
-                            to="#"
-                            data-toggle="collapse"
-                            data-target="#collapseThree"
-                          >
-                            Kids
-                          </Link>
-                        </div>
-                        <div
-                          id="collapseThree"
-                          className="collapse"
-                          data-parent="#accordionExample"
-                        >
-                          <div className="card-body">
-                            <ul>
-                              <li>
-                                <Link to="#">Coats</Link>
-                              </li>
-                              <li>
-                                <Link to="#">Jackets</Link>
-                              </li>
-                              <li>
-                                <Link to="#">Dresses</Link>
-                              </li>
-                              <li>
-                                <Link to="#">Shirts</Link>
-                              </li>
-                              <li>
-                                <Link to="#">T-shirts</Link>
-                              </li>
-                              <li>
-                                <Link to="#">Jeans</Link>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="card">
-                        <div className="card-heading">
-                          <Link
-                            to="#"
-                            data-toggle="collapse"
-                            data-target="#collapseFour"
-                          >
-                            Accessories
-                          </Link>
-                        </div>
-                        <div
-                          id="collapseFour"
-                          className="collapse"
-                          data-parent="#accordionExample"
-                        >
-                          <div className="card-body">
-                            <ul>
-                              <li>
-                                <Link to="#">Coats</Link>
-                              </li>
-                              <li>
-                                <Link to="#">Jackets</Link>
-                              </li>
-                              <li>
-                                <Link to="#">Dresses</Link>
-                              </li>
-                              <li>
-                                <Link to="#">Shirts</Link>
-                              </li>
-                              <li>
-                                <Link to="#">T-shirts</Link>
-                              </li>
-                              <li>
-                                <Link to="#">Jeans</Link>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="card">
-                        <div className="card-heading">
-                          <Link
-                            to="#"
-                            data-toggle="collapse"
-                            data-target="#collapseFive"
-                          >
-                            Cosmetic
-                          </Link>
-                        </div>
-                        <div
-                          id="collapseFive"
-                          className="collapse"
-                          data-parent="#accordionExample"
-                        >
-                          <div className="card-body">
-                            <ul>
-                              <li>
-                                <Link to="#">Coats</Link>
-                              </li>
-                              <li>
-                                <Link to="#">Jackets</Link>
-                              </li>
-                              <li>
-                                <Link to="#">Dresses</Link>
-                              </li>
-                              <li>
-                                <Link to="#">Shirts</Link>
-                              </li>
-                              <li>
-                                <Link to="#">T-shirts</Link>
-                              </li>
-                              <li>
-                                <Link to="#">Jeans</Link>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
+                      ))}
                     </div>
                   </div>
                 </div>
+
                 <div className="sidebar__filter">
                   <div className="section-title">
                     <h4>Shop by price</h4>
@@ -350,7 +265,7 @@ const Shop = ({ products }) => {
             </div>
             <div className="col-lg-9 col-md-9">
               <div className="row">
-                {products.map((product, index) => (
+                {shops.map((product, index) => (
                   <div className="col-lg-4 col-md-6" key={index}>
                     <div className="product__item">
                       <div
@@ -370,11 +285,12 @@ const Shop = ({ products }) => {
                             </Link>
                           </li>
                           <li>
-                            <button style={{border:"none"}}>
-                              <Link to="/shop">
-                                <span className="icon_bag_alt" />
-                              </Link>
-                            </button>
+                            <Link to="/shop">
+                              <span
+                                className="icon_bag_alt"
+                                onClick={() => addToCart(product)}
+                              />
+                            </Link>
                           </li>
                         </ul>
                       </div>

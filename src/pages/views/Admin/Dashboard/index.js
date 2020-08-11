@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const DashBoard = ({ products, blogs }) => {
+const DashBoard = ({ products, blogs, brands, categories }) => {
   return (
     <div>
       <h3>
@@ -9,6 +9,18 @@ const DashBoard = ({ products, blogs }) => {
           Total Product:{" "}
         </label>{" "}
         {products.length}
+      </h3>
+      <h3>
+        <label htmlFor="" className="text-success">
+          Total Brand:{" "}
+        </label>{" "}
+        {brands.length}
+      </h3>
+      <h3>
+        <label htmlFor="" className="text-success">
+          Total Category:{" "}
+        </label>{" "}
+        {categories.length}
       </h3>
       <h3>
         <label htmlFor="" className="text-success">

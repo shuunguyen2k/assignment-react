@@ -2,16 +2,16 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
-const Blogs = ({ blogs, onRemoveBlog }) => {
+const Brands = ({ brands, onRemoveBrand }) => {
   const removeHandle = (id) => {
-    onRemoveBlog(id);
+    onRemoveBrand(id);
   };
   return (
     <div>
       <div className="d-flex justify-content-between align-items-center mb-4">
-        <h1 className="h3 mb-2 text-gray-800">Blog Manager</h1>
-        <Link to="/admin/blog/add" className="btn btn-primary">
-          Add New Blog
+        <h1 className="h3 mb-2 text-gray-800">Brand Manager</h1>
+        <Link to="/admin/brand/add" className="btn btn-primary">
+          Add New Brand
         </Link>
       </div>
       <div className="card shadow mb-4">
@@ -21,38 +21,34 @@ const Blogs = ({ blogs, onRemoveBlog }) => {
               <thead>
                 <tr style={{ textAlign: "center" }}>
                   <th scope="col">#</th>
-                  <th scope="col">Title</th>
-                  <th scope="col">Content</th>
+                  <th scope="col">Name</th>
                   <th scope="col" width={360}>
                     Image
                   </th>
-                  <th scope="col">Author</th>
-                  <th scope="col">Date</th>
                   <th scope="col">Action</th>
                 </tr>
               </thead>
               <tbody>
-                {blogs.map((blog, index) => (
+                {brands.map((brand, index) => (
                   <tr key={index}>
                     <th scope="row">{index + 1}</th>
-                    <td>{blog.title}</td>
-                    <td>{blog.content}</td>
+                    <td>{brand.name}</td>
+
                     <td>
-                      <img src={blog.image} alt="" />
+                      <img src={brand.image} alt="" />
                     </td>
-                    <td>{blog.author}</td>
-                    <td>{blog.date}</td>
+
                     <td style={{ textAlign: "center" }}>
                       <Link
                         className="btn btn-primary"
-                        to={`/admin/blog/${blog.id}`}
+                        to={`/admin/brand/${brand.id}`}
                       >
                         Edit
                       </Link>{" "}
                       &nbsp; &nbsp;
                       <button
                         className="btn btn-danger"
-                        onClick={() => removeHandle(blog.id)}
+                        onClick={() => removeHandle(brand.id)}
                       >
                         Delete
                       </button>
@@ -68,6 +64,6 @@ const Blogs = ({ blogs, onRemoveBlog }) => {
   );
 };
 
-Blogs.propTypes = {};
+Brands.propTypes = {};
 
-export default Blogs;
+export default Brands;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
@@ -6,7 +6,33 @@ import { Link } from "react-router-dom";
 const ProductDetails = ({ products, brands, categories }) => {
   let { id } = useParams();
   const product = products.find((product) => product.id === id);
-  console.log(product);
+
+  const [quantity, setQuantity] = useState(0);
+
+  const onHandleChange = (e) => {
+    setQuantity(e.target.value);
+  };
+
+  const addToCart = (product) => {
+    if (typeof Storage !== "undefined") {
+      if (quantity <= 0) {
+        alert("The quantity is required");
+        return;
+      }
+      if (localStorage.getItem(`${product.id}`) === null) {
+        localStorage.setItem(`${product.id}`, quantity);
+      } else {
+        localStorage.setItem(
+          `${product.id}`,
+          Number(localStorage.getItem(`${product.id}`)) + Number(quantity)
+        );
+      }
+      alert("Add to cart successfully!!");
+    } else {
+      alert("Add to cart fail!!");
+    }
+  };
+
   return (
     <div>
       <div>
@@ -108,10 +134,18 @@ const ProductDetails = ({ products, brands, categories }) => {
                     <div className="quantity">
                       <span>Quantity:</span>
                       <div className="pro-qty">
-                        <input type="text" defaultValue={1} />
+                        <input
+                          type="number"
+                          defaultValue={0}
+                          onChange={onHandleChange}
+                        />
                       </div>
                     </div>
-                    <Link to="/shopCart" className="cart-btn">
+                    <Link
+                      to="#"
+                      className="cart-btn"
+                      onClick={() => addToCart(product)}
+                    >
                       <span className="icon_bag_alt" /> Add to cart
                     </Link>
                     <ul>
