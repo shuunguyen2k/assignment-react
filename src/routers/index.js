@@ -142,7 +142,11 @@ const Routers = ({
               <Route
                 path="/admin/brand/:id"
                 render={(props) => (
-                  <EditBrand {...props} onUpdateBrand={onHandleUpdateBrand} />
+                  <EditBrand
+                    {...props}
+                    brands={brands}
+                    onUpdateBrand={onHandleUpdateBrand}
+                  />
                 )}
               ></Route>
               <Route

@@ -1,16 +1,112 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { useState } from "react";
+import PropTypes from "prop-types";
+import { useParams, useHistory } from "react-router-dom";
+import firebase from "../../../../firebase";
 
-const EditBrand = props => {
-    return (
-        <div>
-            Edit brand
+const EditBrand = ({ brands, onUpdateBrand }) => {
+  let { id } = useParams();
+  let history = useHistory();
+  const brand = brands.find((brand) => brand.id === id);
+
+  const [currentBrand, setCurrentBrand] = useState(brand);
+
+  const onHandleSubmit = (e) => {
+    e.preventDefault();
+    // console.log(currentBrand);
+    onUpdateBrand(currentBrand);
+    history.push("/admin/brands");
+  };
+  const onHandleChange = (e) => {
+    const { name, value } = e.target;
+    if (name === "image") {
+      // console.log(e.target.files[0]);
+      let file = e.target.files[0];
+      let storageRef = firebase.storage().ref(`images/brands/${file.name}`);
+      storageRef.put(file).then(function () {
+        storageRef.getDownloadURL().then((url) => {
+          setCurrentBrand({
+            ...currentBrand,
+            [name]: url,
+          });
+        });
+      });
+      // let storageRef = firebase.storage().ref(`images/products/${file.name}`);
+      // storageRef.put(file).then(function () {
+      //   storageRef.getDownloadURL().then((url) => {
+      //     value = url;
+    } else {
+      setCurrentBrand({
+        ...currentBrand,
+        [name]: value,
+      });
+    }
+  };
+  return (
+    <div>
+      <section className="shop spad">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-3 col-md-3">
+              <div className="section-title">
+                <h4>Update Brand</h4>
+              </div>
+            </div>
+            <div className="col-lg-9 col-md-9">
+              <form
+                action=""
+                // onSubmit={handleSubmit(onHandleSubmit)}
+                onSubmit={onHandleSubmit}
+                className="w-75"
+              >
+                <div className="form-group">
+                  <label htmlFor="productName">
+                    Name<span className="text-danger">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    name="name"
+                    value={currentBrand.name}
+                    onChange={onHandleChange}
+                    className="form-control"
+                    id="productName"
+                    // ref={register({
+                    //   required: true,
+                    //   pattern: /^[\w\d-]+[\w\d\s-]*$/i,
+                    // })}
+                    aria-describedby="nameHelp"
+                  />
+                  {/* <small id="nameHelp" className="form-text text-danger">
+                    {errors.name && errors.name.type === "required" && (
+                      <span>This field is required</span>
+                    )}
+                    {errors.name && errors.name.type === "pattern" && (
+                      <span>This field is pattern</span>
+                    )}
+                  </small> */}
+                </div>
+                <div className="form-group">
+                  <label htmlFor="productImage">Image</label>
+                  <input
+                    type="file"
+                    name="image"
+                    // defaultValue={currentProduct.image}
+                    onChange={onHandleChange}
+                    className="form-control"
+                    id="productImage"
+                    // ref={register()}
+                    aria-describedby="imageHelp"
+                  />
+                </div>
+                <button className="btn btn-primary">Update</button>
+              </form>
+            </div>
+          </div>
         </div>
-    )
-}
+      </section>
+    </div>
+  );
+};
 
-EditBrand.propTypes = {
+EditBrand.propTypes = {};
 
-}
-
-export default EditBrand
+export default EditBrand;

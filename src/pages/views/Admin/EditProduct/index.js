@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { useForm } from "react-hook-form";
+// import { useForm } from "react-hook-form";
 import { useParams, useHistory } from "react-router-dom";
 import firebase from "../../../../firebase";
 
@@ -14,7 +14,7 @@ const EditProduct = ({ products, brands, categories, onUpdate }) => {
 
   const onHandleSubmit = (e) => {
     e.preventDefault();
-    console.log(currentProduct);
+    // console.log(currentProduct);
     onUpdate(currentProduct);
     history.push('/admin/products');
   };
