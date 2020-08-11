@@ -30,10 +30,6 @@ const EditBrand = ({ brands, onUpdateBrand }) => {
           });
         });
       });
-      // let storageRef = firebase.storage().ref(`images/products/${file.name}`);
-      // storageRef.put(file).then(function () {
-      //   storageRef.getDownloadURL().then((url) => {
-      //     value = url;
     } else {
       setCurrentBrand({
         ...currentBrand,
@@ -52,12 +48,7 @@ const EditBrand = ({ brands, onUpdateBrand }) => {
               </div>
             </div>
             <div className="col-lg-9 col-md-9">
-              <form
-                action=""
-                // onSubmit={handleSubmit(onHandleSubmit)}
-                onSubmit={onHandleSubmit}
-                className="w-75"
-              >
+              <form action="" onSubmit={onHandleSubmit} className="w-75">
                 <div className="form-group">
                   <label htmlFor="productName">
                     Name<span className="text-danger">*</span>
@@ -69,31 +60,17 @@ const EditBrand = ({ brands, onUpdateBrand }) => {
                     onChange={onHandleChange}
                     className="form-control"
                     id="productName"
-                    // ref={register({
-                    //   required: true,
-                    //   pattern: /^[\w\d-]+[\w\d\s-]*$/i,
-                    // })}
                     aria-describedby="nameHelp"
                   />
-                  {/* <small id="nameHelp" className="form-text text-danger">
-                    {errors.name && errors.name.type === "required" && (
-                      <span>This field is required</span>
-                    )}
-                    {errors.name && errors.name.type === "pattern" && (
-                      <span>This field is pattern</span>
-                    )}
-                  </small> */}
                 </div>
                 <div className="form-group">
                   <label htmlFor="productImage">Image</label>
                   <input
                     type="file"
                     name="image"
-                    // defaultValue={currentProduct.image}
                     onChange={onHandleChange}
                     className="form-control"
                     id="productImage"
-                    // ref={register()}
                     aria-describedby="imageHelp"
                   />
                 </div>
