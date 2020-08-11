@@ -122,7 +122,9 @@ const AddBlog = ({ onAddBlog }) => {
                 </small>
               </div>
               <div className="form-group">
-                <label htmlFor="blogDatePublished">Date Published</label>
+                <label htmlFor="blogDatePublished">
+                  Date Published<span className="text-danger">*</span>
+                </label>
                 <input
                   type="date"
                   name="date"

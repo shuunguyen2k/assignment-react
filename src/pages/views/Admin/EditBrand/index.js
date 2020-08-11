@@ -50,7 +50,7 @@ const EditBrand = ({ brands, onUpdateBrand }) => {
             <div className="col-lg-9 col-md-9">
               <form action="" onSubmit={onHandleSubmit} className="w-75">
                 <div className="form-group">
-                  <label htmlFor="productName">
+                  <label htmlFor="brandName">
                     Name<span className="text-danger">*</span>
                   </label>
                   <input
@@ -59,19 +59,17 @@ const EditBrand = ({ brands, onUpdateBrand }) => {
                     value={currentBrand.name}
                     onChange={onHandleChange}
                     className="form-control"
-                    id="productName"
-                    aria-describedby="nameHelp"
+                    id="brandName"
                   />
                 </div>
                 <div className="form-group">
-                  <label htmlFor="productImage">Image</label>
+                  <label htmlFor="brandImage">Image</label>
                   <input
                     type="file"
                     name="image"
                     onChange={onHandleChange}
                     className="form-control"
-                    id="productImage"
-                    aria-describedby="imageHelp"
+                    id="brandImage"
                   />
                 </div>
                 <button className="btn btn-primary">Update</button>

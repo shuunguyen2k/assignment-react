@@ -267,8 +267,8 @@
     {
       "id": "kn62te2bl",
       "title": "a",
-      "content": "a",
-      "author": "a",
+      "content": "ab",
+      "author": "abc",
       "image": "https://firebasestorage.googleapis.com/v0/b/react-basic-1d16b.appspot.com/o/images%2Fblogs%2Fblog-2.jpg?alt=media&token=4c2ca9ea-e0ff-49e9-ae46-f97504f4f7c7",
       "date": "2020-08-11"
     }
