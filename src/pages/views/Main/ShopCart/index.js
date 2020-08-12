@@ -3,8 +3,32 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 const ShopCart = ({ products }) => {
-  console.log(localStorage);
+  const arr = [];
+  for (var i = 0; i < localStorage.length; i++) {
+    products.map((product) => {
+      if (product.id === localStorage.key(i)) {
+        product = {
+          ...product,
+          quantity: localStorage.getItem(localStorage.key(i)),
+        };
+        arr.push(product);
+      }
+    });
+  }
+  const [shopCarts, setshopCarts] = useState(arr);
 
+  let subTotal = shopCarts.reduce((total, product) => {
+    return (total += product.salePrice * product.quantity);
+  }, 0);
+
+  const onHandleChange = (e) => {};
+
+  const onHandleRemove = (id) => {
+    setshopCarts(shopCarts.filter((product) => product.id !== id));
+    localStorage.removeItem(`${id}`);
+  };
+
+  const onHandleUpdate = () => {};
 
   return (
     <div>
@@ -41,8 +65,8 @@ const ShopCart = ({ products }) => {
                       <th />
                     </tr>
                   </thead>
-                  {/* <tbody>
-                    {arr2.map((product, index) => (
+                  <tbody>
+                    {shopCarts.map((product, index) => (
                       <tr key={index}>
                         <td className="cart__product__item">
                           <img src={product.image} alt="" width={50} />
@@ -60,16 +84,25 @@ const ShopCart = ({ products }) => {
                         <td className="cart__price">$ {product.salePrice}</td>
                         <td className="cart__quantity">
                           <div className="pro-qty">
-                            <input type="number" defaultValue={1} />
+                            <input
+                              type="number"
+                              defaultValue={product.quantity}
+                              onChange={onHandleChange}
+                            />
                           </div>
                         </td>
-                        <td className="cart__total">$ 300.0</td>
+                        <td className="cart__total">
+                          $ {(product.salePrice * product.quantity).toFixed(2)}
+                        </td>
                         <td className="cart__close">
-                          <span className="icon_close" />
+                          <span
+                            className="icon_close"
+                            onClick={() => onHandleRemove(product.id)}
+                          />
                         </td>
                       </tr>
                     ))}
-                  </tbody> */}
+                  </tbody>
                 </table>
               </div>
             </div>
@@ -105,13 +138,13 @@ const ShopCart = ({ products }) => {
                 <h6>Cart total</h6>
                 <ul>
                   <li>
-                    Subtotal <span>$ 750.0</span>
+                    Subtotal <span>$ {subTotal}</span>
                   </li>
                   <li>
-                    Total <span>$ 750.0</span>
+                    Total <span>$ {subTotal}</span>
                   </li>
                 </ul>
-                <Link to="#" className="primary-btn">
+                <Link to="/checkOut" className="primary-btn">
                   Proceed to checkout
                 </Link>
               </div>

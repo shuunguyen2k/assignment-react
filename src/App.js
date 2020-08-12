@@ -3,7 +3,8 @@ import Routers from "./routers";
 import productsApiRequest from "./api/productApi";
 import brandsApiRequest from "./api/brandApi";
 import categoryApiRequest from "./api/categoryApi";
-import shopCartsApiRequest from "./api/shopCartApi";
+import shopCartApiRequest from "./api/shopCartApi";
+import customerApiRequest from "./api/customerApi";
 import blogApiRequest from "./api/blogApi";
 
 function App() {
@@ -107,7 +108,7 @@ function App() {
   useEffect(() => {
     const getShopCarts = async () => {
       try {
-        const { data } = await shopCartsApiRequest.getAll();
+        const { data } = await shopCartApiRequest.getAll();
         setShopCarts(data);
       } catch (error) {
         console.log("Failed to request API: ", error);
@@ -115,6 +116,39 @@ function App() {
     };
     getShopCarts();
   }, []);
+  const onHandleAddShopCart = async (shopCart) => {
+    try {
+      const { data } = await shopCartApiRequest.create(shopCart);
+      setShopCarts([...shopCarts, data]);
+      // window.alert("Add Successfully!!");
+      console.log("thêm shopcart");
+    } catch (error) {
+      console.log("failed to request API: ", error);
+    }
+  };
+
+  const [customers, setCustomers] = useState([]);
+  useEffect(() => {
+    const getCustomers = async () => {
+      try {
+        const { data } = await customerApiRequest.getAll();
+        setCustomers(data);
+      } catch (error) {
+        console.log("Failed to request API: ", error);
+      }
+    };
+    getCustomers();
+  }, []);
+  const onHandleAddCustomer = async (customer) => {
+    try {
+      const { data } = await customerApiRequest.create(customer);
+      setCustomers([...customers, data]);
+      // window.alert("Add Successfully!!");
+      console.log("thêm customer");
+    } catch (error) {
+      console.log("failed to request API: ", error);
+    }
+  };
 
   const [blogs, setBlogs] = useState([]);
   useEffect(() => {
@@ -166,6 +200,7 @@ function App() {
         brands={brands}
         categories={categories}
         shopCarts={shopCarts}
+        customers={customers}
         blogs={blogs}
         onAdd={onHandleAdd}
         onRemove={onHandleRemove}
@@ -173,6 +208,8 @@ function App() {
         onAddBrand={onHandleAddBrand}
         onRemoveBrand={onHandleRemoveBrand}
         onUpdateBrand={onHandleUpdateBrand}
+        onAddShopCart={onHandleAddShopCart}
+        onAddCustomer={onHandleAddCustomer}
         onAddBlog={onHandleAddBlog}
         onRemoveBlog={onHandleRemoveBlog}
         onUpdateBlog={onHandleUpdateBlog}

@@ -15,6 +15,7 @@ import EditBlog from "../pages/views/Admin/EditBlog";
 import Brands from "../pages/views/Admin/Brands";
 import AddBrand from "../pages/views/Admin/AddBrand";
 import EditBrand from "../pages/views/Admin/EditBrand";
+import Order from "../pages/views/Admin/Order";
 
 import Home from "../pages/views/Main/Home";
 import Shop from "../pages/views/Main/Shop";
@@ -23,12 +24,14 @@ import ShopCart from "../pages/views/Main/ShopCart";
 import CheckOut from "../pages/views/Main/CheckOut";
 import Blog from "../pages/views/Main/Blog";
 import Contact from "../pages/views/Main/Contact";
+import Thanks from "../pages/views/Main/Thanks";
 
 const Routers = ({
   products,
   brands,
   categories,
   shopCarts,
+  customers,
   blogs,
   onAdd,
   onUpdate,
@@ -36,6 +39,8 @@ const Routers = ({
   onAddBrand,
   onUpdateBrand,
   onRemoveBrand,
+  onAddShopCart,
+  onAddCustomer,
   onAddBlog,
   onUpdateBlog,
   onRemoveBlog,
@@ -58,6 +63,14 @@ const Routers = ({
   };
   const onHandleRemoveBrand = (id) => {
     onRemoveBrand(id);
+  };
+
+  const onHandleAddShopCart = (shopCart) => {
+    onAddShopCart(shopCart);
+  };
+
+  const onHandleAddCustomer = (customer) => {
+    onAddCustomer(customer);
   };
 
   const onHandleAddBlog = (blog) => {
@@ -150,6 +163,26 @@ const Routers = ({
                 )}
               ></Route>
               <Route
+                path="/admin/brand/:id"
+                render={(props) => (
+                  <EditBrand
+                    {...props}
+                    brands={brands}
+                    onUpdateBrand={onHandleUpdateBrand}
+                  />
+                )}
+              ></Route>
+              <Route
+                path="/admin/order"
+                render={(props) => (
+                  <Order
+                    {...props}
+                    shopCarts={shopCarts}
+                    customers={customers}
+                  />
+                )}
+              ></Route>
+              <Route
                 path="/admin/blogs"
                 render={(props) => (
                   <Blogs
@@ -200,16 +233,21 @@ const Routers = ({
               </Route>
               <Route
                 path="/shopCart"
+                render={(props) => <ShopCart {...props} products={products} />}
+              ></Route>
+              <Route
+                path="/checkOut"
                 render={(props) => (
-                  <ShopCart
+                  <CheckOut
                     {...props}
                     products={products}
-                    shopCarts={shopCarts}
+                    onAddShopCart={onHandleAddShopCart}
+                    onAddCustomer={onHandleAddCustomer}
                   />
                 )}
               ></Route>
-              <Route path="/checkOut">
-                <CheckOut />
+              <Route path="/thanks">
+                <Thanks />
               </Route>
               <Route path="/blog">
                 <Blog />
