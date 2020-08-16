@@ -95,6 +95,8 @@ const Routers = ({
                   blogs={blogs}
                   brands={brands}
                   categories={categories}
+                  shopCarts={shopCarts}
+                  customers={customers}
                 />
               </Route>
               <Route

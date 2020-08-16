@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 const ShopCart = ({ products }) => {
   const arr = [];
+  const [shopCarts, setshopCarts] = useState(arr);
   for (var i = 0; i < localStorage.length; i++) {
     products.map((product) => {
       if (product.id === localStorage.key(i)) {
@@ -15,7 +16,6 @@ const ShopCart = ({ products }) => {
       }
     });
   }
-  const [shopCarts, setshopCarts] = useState(arr);
 
   let subTotal = shopCarts.reduce((total, product) => {
     return (total += product.salePrice * product.quantity);
@@ -138,10 +138,10 @@ const ShopCart = ({ products }) => {
                 <h6>Cart total</h6>
                 <ul>
                   <li>
-                    Subtotal <span>$ {subTotal}</span>
+                    Subtotal <span>$ {subTotal.toFixed(2)}</span>
                   </li>
                   <li>
-                    Total <span>$ {subTotal}</span>
+                    Total <span>$ {subTotal.toFixed(2)}</span>
                   </li>
                 </ul>
                 <Link to="/checkOut" className="primary-btn">

@@ -63,13 +63,13 @@ const Header = (props) => {
                 <li>
                   <Link to="#">
                     <span className="icon_heart_alt" />
-                    <div className="tip">2</div>
+                    {/* <div className="tip">2</div> */}
                   </Link>
                 </li>
                 <li>
                   <Link to="/shopCart">
                     <span className="icon_bag_alt" />
-                    <div className="tip">2</div>
+                    {/* <div className="tip">2</div> */}
                   </Link>
                 </li>
               </ul>

@@ -31,7 +31,7 @@ const AddBrand = ({ onAddBrand }) => {
         <div className="row">
           <div className="col-lg-3 col-md-3">
             <div className="section-title">
-              <h4>Add blog</h4>
+              <h4>Add Brand</h4>
             </div>
           </div>
           <div className="col-lg-9 col-md-9">

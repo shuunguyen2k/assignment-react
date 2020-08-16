@@ -264,8 +264,8 @@
   ],
   "shopCarts": [
     {
-      "id": "f3obhm2jw",
-      "date": "12-8-2020",
+      "id": "5c5w7zzl0",
+      "date": "7-15-2020",
       "shopCarts": [
         {
           "id": "1",
@@ -279,7 +279,7 @@
           "image": "https://firebasestorage.googleapis.com/v0/b/react-basic-1d16b.appspot.com/o/images%2Fproducts%2Fbalmain-t-shirts-vests-mens-logo-print-t-shirt-white-5.jpg?alt=media&token=cdeddf30-8340-415a-95ac-53a4ba5f01d4",
           "gallery": "",
           "availability": "true",
-          "quantity": "3"
+          "quantity": "1"
         },
         {
           "id": "2",
@@ -293,18 +293,109 @@
           "image": "https://firebasestorage.googleapis.com/v0/b/react-basic-1d16b.appspot.com/o/images%2Fproducts%2Falexander-mcqueen-sweaters-knitwear-mens-floral-bird-embroidered-jumper-black.jpg?alt=media&token=d39a17f1-b7cb-4fdf-8f40-58c47aa22139",
           "gallery": "",
           "availability": "true",
+          "quantity": "1"
+        },
+        {
+          "id": "5",
+          "SKU": "QM492319",
+          "name": "Mens Classic Plain Shirt White",
+          "brandId": "4",
+          "regularPrice": "123.24",
+          "salePrice": "63.18",
+          "description": "By being strongly focused on both style and functionality, Giorgio Armani creates elegant designs for the modern man that combine traditional standards of production with a dash of irreverent attitude. Crafted from white cotton, this classic plain shirt from Emporio Armani features a classic collar, a front button fastening, long sleeves and a curved hem.",
+          "categoryId": "1",
+          "image": "https://firebasestorage.googleapis.com/v0/b/react-basic-1d16b.appspot.com/o/images%2Fproducts%2Femporio-armani-shirts-mens-classic-plain-shirt-white.jpg?alt=media&token=faa35a08-0774-483e-ada7-e6b23f94c9c9",
+          "gallery": "",
+          "availability": "true",
+          "quantity": "1"
+        },
+        {
+          "id": "3",
+          "SKU": "QM491403",
+          "name": "Mens Regular Fit Trousers Black",
+          "brandId": "2",
+          "regularPrice": "112.32",
+          "salePrice": "57.72",
+          "description": "Balmain’s tough, rock-and-roll edge was remixed with the designer’s signature glitz and glamour, presenting a rich line-up of sumptuous leathers, metal studding and heavy-duty embellishment. These black cotton regular fit trousers feature a mid rise, a front button fastening, side pockets, a straight leg, back pockets and an embroidered logo to the rear.",
+          "categoryId": "1",
+          "image": "https://firebasestorage.googleapis.com/v0/b/react-basic-1d16b.appspot.com/o/images%2Fproducts%2Fbalmain-trousers-mens-regular-fit-trousers-black.jpg?alt=media&token=45d9d8c5-e203-4cd7-ba62-ffdb32938505",
+          "gallery": "",
+          "availability": "true",
+          "quantity": "1"
+        }
+      ],
+      "subTotal": 248.04
+    },
+    {
+      "id": "4cg4w7ee4",
+      "date": "8-15-2020",
+      "shopCarts": [
+        {
+          "id": "13",
+          "SKU": "QM489556",
+          "name": "Womens Striped Belted Cardigan Grey",
+          "brandId": "3",
+          "regularPrice": "129.48",
+          "salePrice": "66.30",
+          "description": "Grey wool blend striped belted cardigan from Brunello Cucinelli featuring a shawl lapel, a belted waist, horizontal stripes, long sleeves and a ribbed hem and cuffs.",
+          "categoryId": "2",
+          "image": "https://firebasestorage.googleapis.com/v0/b/react-basic-1d16b.appspot.com/o/images%2Fproducts%2Fbrunello-cucinelli-knitwear-womens-striped-belted-cardigan-grey.jpg?alt=media&token=d918b94e-2f03-4276-a852-46ae4f9fe276",
+          "gallery": "",
+          "availability": "true",
+          "quantity": "1"
+        },
+        {
+          "id": "14",
+          "SKU": "QM489447",
+          "name": "Womens Strapless Evening Dress Green",
+          "brandId": "1",
+          "regularPrice": "135.72",
+          "salePrice": "69.42",
+          "description": "Alexander McQueen replaces gothic, dark romanticism for classic feminine and floral designs in the new SS19 collection, as showcased by this pale green silk strapless evening dress featuring a gathered design, a rear zip fastening, draped details and a sheer construction.",
+          "categoryId": "2",
+          "image": "https://firebasestorage.googleapis.com/v0/b/react-basic-1d16b.appspot.com/o/images%2Fproducts%2Fmaison-margiela-dresses-womens-drawstring-midi-dress-white-1.jpg?alt=media&token=e416f00d-7f4f-45e9-a187-ca9c67bc7e69",
+          "gallery": "",
+          "availability": "true",
+          "quantity": "1"
+        },
+        {
+          "id": "1",
+          "SKU": "QM492116",
+          "name": "Mens Logo Print T-Shirt White",
+          "brandId": "2",
+          "regularPrice": "115.44",
+          "salePrice": "59.28",
+          "description": "Balmain continues to introduce a youthful energy to the brand’s classic silhouettes. Expect expert craftsmanship and premium materials blended with sports-inspired elements and a contemporary finish. Crafted from pure cotton, this logo print T-shirt from Balmain is all about timeless design. Featuring a ribbed round neck, short sleeves, a printed logo to the front and a straight hem.",
+          "categoryId": "1",
+          "image": "https://firebasestorage.googleapis.com/v0/b/react-basic-1d16b.appspot.com/o/images%2Fproducts%2Fbalmain-t-shirts-vests-mens-logo-print-t-shirt-white-5.jpg?alt=media&token=cdeddf30-8340-415a-95ac-53a4ba5f01d4",
+          "gallery": "",
+          "availability": "true",
           "quantity": "2"
         },
         {
-          "id": "7",
-          "SKU": "QM492213",
-          "name": "Mens Embroidered Rose Patch T-Shirt White",
-          "brandId": "1",
-          "regularPrice": "134.16",
-          "salePrice": "68.64",
-          "description": "Alexander McQueen is renowned for being the champion of eye-popping theatrics, toughening up everyday looks with gothic romanticism. Introducing this white cotton embroidered rose patch T-shirt from Alexander McQueen for AW19. Featuring a round neck, short sleeves, an embroidered rose motif to the chest and a lettered logo to the front.",
+          "id": "8",
+          "SKU": "QM491307",
+          "name": "Mens Monster Print Shirt Black/Red",
+          "brandId": "6",
+          "regularPrice": "126.36",
+          "salePrice": "64.74",
+          "description": "Red and black cotton monster print shirt from Givenchy featuring a classic collar, a button fastening, short sleeves, contrasting panels and a rear graphic print design.",
           "categoryId": "1",
-          "image": "https://firebasestorage.googleapis.com/v0/b/react-basic-1d16b.appspot.com/o/images%2Fproducts%2Falexander-mcqueen-t-shirts-vests-mens-embroidered-rose-patch-t-shirt-white.jpg?alt=media&token=193c4dab-1c89-4c02-83f5-aa89d1968b17",
+          "image": "https://firebasestorage.googleapis.com/v0/b/react-basic-1d16b.appspot.com/o/images%2Fproducts%2Fgivenchy-shirts-mens-monster-print-shirt-blackred.jpg?alt=media&token=01ec1497-f4ab-4c77-942a-55ff8e9bff8d",
+          "gallery": "",
+          "availability": "true",
+          "quantity": "1"
+        },
+        {
+          "id": "16",
+          "SKU": "QM492631",
+          "name": "Womens Logo Sweater Red",
+          "brandId": "8",
+          "regularPrice": "101.40",
+          "salePrice": "52.26",
+          "description": "As well as art, Massimo Giorgetti has cited the modern indie music scene as a main inspiration for his designs. Refresh your AW19 wardrobe with this red cotton logo sweater from MSGM featuring a crew neck, long sleeves, an elasticated hem, elasticated cuffs, a relaxed fit and a logo at the front.",
+          "categoryId": "2",
+          "image": "https://firebasestorage.googleapis.com/v0/b/react-basic-1d16b.appspot.com/o/images%2Fproducts%2Fmsgm-knitwear-womens-logo-sweater-red.jpg?alt=media&token=d3f6100f-6335-460d-86ef-01a7adfde4e1",
           "gallery": "",
           "availability": "true",
           "quantity": "1"
@@ -322,23 +413,38 @@
           "gallery": "",
           "availability": "true",
           "quantity": "2"
+        },
+        {
+          "id": "11",
+          "SKU": "QM489650",
+          "name": "Womens Floral Embroidered Dress White/Orange",
+          "brandId": "5",
+          "regularPrice": "131.04",
+          "salePrice": "67.08",
+          "description": "Quality natural fabrics are valued highly at Etro – the brand expresses a kind of refined, intellectual fashion that blends handcrafted skills with creative innovation, as well as fusing timeless materials with contemporary silhouettes. Crafted in Italy, this orange and white cotton and silk blend dress features a classic collar, long sleeves, an embroidered floral design, a short length and a shift silhouette.",
+          "categoryId": "2",
+          "image": "https://firebasestorage.googleapis.com/v0/b/react-basic-1d16b.appspot.com/o/images%2Fproducts%2Fetro-dresses-womens-floral-embroidered-dress-whiteorange.jpg?alt=media&token=9cb50ec6-8329-4f8e-868a-86daec4b77c4",
+          "gallery": "",
+          "availability": "true",
+          "quantity": "1"
         }
-      ]
+      ],
+      "subTotal": 564.72
     },
     {
-      "id": "5yslk6v5g",
-      "date": "12-8-2020",
+      "id": "7qde73t45",
+      "date": "8-15-2020",
       "shopCarts": [
         {
-          "id": "13",
-          "SKU": "QM489556",
-          "name": "Womens Striped Belted Cardigan Grey",
-          "brandId": "3",
-          "regularPrice": "129.48",
-          "salePrice": "66.30",
-          "description": "Grey wool blend striped belted cardigan from Brunello Cucinelli featuring a shawl lapel, a belted waist, horizontal stripes, long sleeves and a ribbed hem and cuffs.",
-          "categoryId": "2",
-          "image": "https://firebasestorage.googleapis.com/v0/b/react-basic-1d16b.appspot.com/o/images%2Fproducts%2Fbrunello-cucinelli-knitwear-womens-striped-belted-cardigan-grey.jpg?alt=media&token=d918b94e-2f03-4276-a852-46ae4f9fe276",
+          "id": "1",
+          "SKU": "QM492116",
+          "name": "Mens Logo Print T-Shirt White",
+          "brandId": "2",
+          "regularPrice": "115.44",
+          "salePrice": "59.28",
+          "description": "Balmain continues to introduce a youthful energy to the brand’s classic silhouettes. Expect expert craftsmanship and premium materials blended with sports-inspired elements and a contemporary finish. Crafted from pure cotton, this logo print T-shirt from Balmain is all about timeless design. Featuring a ribbed round neck, short sleeves, a printed logo to the front and a straight hem.",
+          "categoryId": "1",
+          "image": "https://firebasestorage.googleapis.com/v0/b/react-basic-1d16b.appspot.com/o/images%2Fproducts%2Fbalmain-t-shirts-vests-mens-logo-print-t-shirt-white-5.jpg?alt=media&token=cdeddf30-8340-415a-95ac-53a4ba5f01d4",
           "gallery": "",
           "availability": "true",
           "quantity": "2"
@@ -355,46 +461,146 @@
           "image": "https://firebasestorage.googleapis.com/v0/b/react-basic-1d16b.appspot.com/o/images%2Fproducts%2Falexander-mcqueen-sweaters-knitwear-mens-floral-bird-embroidered-jumper-black.jpg?alt=media&token=d39a17f1-b7cb-4fdf-8f40-58c47aa22139",
           "gallery": "",
           "availability": "true",
-          "quantity": "3"
+          "quantity": "2"
         },
         {
-          "id": "14",
-          "SKU": "QM489447",
-          "name": "Womens Strapless Evening Dress Green",
+          "id": "4",
+          "SKU": "QM489867",
+          "name": "Mens Logo Patch Hoodie Green",
           "brandId": "1",
-          "regularPrice": "135.72",
-          "salePrice": "69.42",
-          "description": "Alexander McQueen replaces gothic, dark romanticism for classic feminine and floral designs in the new SS19 collection, as showcased by this pale green silk strapless evening dress featuring a gathered design, a rear zip fastening, draped details and a sheer construction.",
-          "categoryId": "2",
-          "image": "https://firebasestorage.googleapis.com/v0/b/react-basic-1d16b.appspot.com/o/images%2Fproducts%2Fmaison-margiela-dresses-womens-drawstring-midi-dress-white-1.jpg?alt=media&token=e416f00d-7f4f-45e9-a187-ca9c67bc7e69",
+          "regularPrice": "137.28",
+          "salePrice": "70.20",
+          "description": "Infused with the label’s signature dark romanticism and urban styling, French fashion house Givenchy was originally founded in 1952 by acclaimed couturier Hubert de Givenchy. This green cotton logo patch hoodie from Givenchy features a hood with drawstring tie fastenings, long sleeves and a ribbed hem and cuffs.",
+          "categoryId": "1",
+          "image": "https://firebasestorage.googleapis.com/v0/b/react-basic-1d16b.appspot.com/o/images%2Fproducts%2Fgivenchy-sweaters-knitwear-mens-logo-patch-hoodie-green.jpg?alt=media&token=8ba39930-6050-4492-8e76-476980b3ffc2",
+          "gallery": "",
+          "availability": "true",
+          "quantity": "1"
+        },
+        {
+          "id": "5",
+          "SKU": "QM492319",
+          "name": "Mens Classic Plain Shirt White",
+          "brandId": "4",
+          "regularPrice": "123.24",
+          "salePrice": "63.18",
+          "description": "By being strongly focused on both style and functionality, Giorgio Armani creates elegant designs for the modern man that combine traditional standards of production with a dash of irreverent attitude. Crafted from white cotton, this classic plain shirt from Emporio Armani features a classic collar, a front button fastening, long sleeves and a curved hem.",
+          "categoryId": "1",
+          "image": "https://firebasestorage.googleapis.com/v0/b/react-basic-1d16b.appspot.com/o/images%2Fproducts%2Femporio-armani-shirts-mens-classic-plain-shirt-white.jpg?alt=media&token=faa35a08-0774-483e-ada7-e6b23f94c9c9",
+          "gallery": "",
+          "availability": "true",
+          "quantity": "1"
+        },
+        {
+          "id": "3",
+          "SKU": "QM491403",
+          "name": "Mens Regular Fit Trousers Black",
+          "brandId": "2",
+          "regularPrice": "112.32",
+          "salePrice": "57.72",
+          "description": "Balmain’s tough, rock-and-roll edge was remixed with the designer’s signature glitz and glamour, presenting a rich line-up of sumptuous leathers, metal studding and heavy-duty embellishment. These black cotton regular fit trousers feature a mid rise, a front button fastening, side pockets, a straight leg, back pockets and an embroidered logo to the rear.",
+          "categoryId": "1",
+          "image": "https://firebasestorage.googleapis.com/v0/b/react-basic-1d16b.appspot.com/o/images%2Fproducts%2Fbalmain-trousers-mens-regular-fit-trousers-black.jpg?alt=media&token=45d9d8c5-e203-4cd7-ba62-ffdb32938505",
           "gallery": "",
           "availability": "true",
           "quantity": "2"
         }
-      ]
+      ],
+      "subTotal": 503.1
+    },
+    {
+      "id": "8m7cxde3e",
+      "date": "8-16-2020",
+      "shopCarts": [
+        {
+          "id": "2",
+          "SKU": "QM490840",
+          "name": "Mens Floral Bird Embroidered Jumper Black",
+          "brandId": "1",
+          "regularPrice": "132.60",
+          "salePrice": "67.86",
+          "description": "Discover the darkly alluring aesthetic of Alexander McQueen in the latest collection. Theatrical designs feature intricate, opulent detailing and gothic motifs. This black cotton floral bird embroidered jumper features a ribbed round neck, a slim fit, long sleeves and a ribbed hem and cuffs.",
+          "categoryId": "1",
+          "image": "https://firebasestorage.googleapis.com/v0/b/react-basic-1d16b.appspot.com/o/images%2Fproducts%2Falexander-mcqueen-sweaters-knitwear-mens-floral-bird-embroidered-jumper-black.jpg?alt=media&token=d39a17f1-b7cb-4fdf-8f40-58c47aa22139",
+          "gallery": "",
+          "availability": "true",
+          "quantity": "1"
+        },
+        {
+          "id": "7",
+          "SKU": "QM492213",
+          "name": "Mens Embroidered Rose Patch T-Shirt White",
+          "brandId": "1",
+          "regularPrice": "134.16",
+          "salePrice": "68.64",
+          "description": "Alexander McQueen is renowned for being the champion of eye-popping theatrics, toughening up everyday looks with gothic romanticism. Introducing this white cotton embroidered rose patch T-shirt from Alexander McQueen for AW19. Featuring a round neck, short sleeves, an embroidered rose motif to the chest and a lettered logo to the front.",
+          "categoryId": "1",
+          "image": "https://firebasestorage.googleapis.com/v0/b/react-basic-1d16b.appspot.com/o/images%2Fproducts%2Falexander-mcqueen-t-shirts-vests-mens-embroidered-rose-patch-t-shirt-white.jpg?alt=media&token=193c4dab-1c89-4c02-83f5-aa89d1968b17",
+          "gallery": "",
+          "availability": "true",
+          "quantity": "1"
+        },
+        {
+          "id": "1",
+          "SKU": "QM492116",
+          "name": "Mens Logo Print T-Shirt White",
+          "brandId": "2",
+          "regularPrice": "115.44",
+          "salePrice": "59.28",
+          "description": "Balmain continues to introduce a youthful energy to the brand’s classic silhouettes. Expect expert craftsmanship and premium materials blended with sports-inspired elements and a contemporary finish. Crafted from pure cotton, this logo print T-shirt from Balmain is all about timeless design. Featuring a ribbed round neck, short sleeves, a printed logo to the front and a straight hem.",
+          "categoryId": "1",
+          "image": "https://firebasestorage.googleapis.com/v0/b/react-basic-1d16b.appspot.com/o/images%2Fproducts%2Fbalmain-t-shirts-vests-mens-logo-print-t-shirt-white-5.jpg?alt=media&token=cdeddf30-8340-415a-95ac-53a4ba5f01d4",
+          "gallery": "",
+          "availability": "true",
+          "quantity": "2"
+        }
+      ],
+      "subTotal": 255.06
     }
   ],
   "customers": [
     {
-      "id": "f3obhm2jw",
-      "firstname": "a",
-      "lastname": "a",
-      "country": "VN",
-      "city": "HN",
-      "address": "a",
-      "phone": "0987654321",
-      "email": "a@gmail.com",
+      "id": "5c5w7zzl0",
+      "firstname": "Nguyen",
+      "lastname": "Doan",
+      "country": "Viet Nam",
+      "city": "Hai Phong",
+      "address": "An Lao",
+      "phone": "0971617399",
+      "email": "doanalhp2k@gmail.com",
       "note": ""
     },
     {
-      "id": "5yslk6v5g",
+      "id": "4cg4w7ee4",
+      "firstname": "Nguyen",
+      "lastname": "Quan",
+      "country": "Viet Nam",
+      "city": "Ha Noi",
+      "address": "Ha Nam",
+      "phone": "0987654321",
+      "email": "quannc@gmail.com",
+      "note": ""
+    },
+    {
+      "id": "7qde73t45",
       "firstname": "Nguyen",
       "lastname": "Doan",
-      "country": "VN",
-      "city": "HP",
-      "address": "An Lao",
+      "country": "Viet Nam",
+      "city": "Ha Noi",
+      "address": "Nam Tu Liem",
       "phone": "0987654321",
       "email": "doan@gmail.com",
+      "note": ""
+    },
+    {
+      "id": "8m7cxde3e",
+      "firstname": "a",
+      "lastname": "a",
+      "country": "Viet Nam",
+      "city": "Da Nang",
+      "address": "a",
+      "phone": "0987654321",
+      "email": "a@gmail.com",
       "note": ""
     }
   ],

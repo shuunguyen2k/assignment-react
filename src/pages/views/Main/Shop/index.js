@@ -284,12 +284,9 @@ const Shop = ({ products, brands, categories }) => {
                               <span className="icon_heart_alt" />
                             </Link>
                           </li>
-                          <li>
+                          <li onClick={() => addToCart(product)}>
                             <Link to="/shop">
-                              <span
-                                className="icon_bag_alt"
-                                onClick={() => addToCart(product)}
-                              />
+                              <span className="icon_bag_alt" />
                             </Link>
                           </li>
                         </ul>

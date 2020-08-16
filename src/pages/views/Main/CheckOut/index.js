@@ -10,18 +10,11 @@ const CheckOut = ({ products, onAddShopCart, onAddCustomer }) => {
 
   const onHandleSubmit = (data) => {
     const id = Math.random().toString(36).substr(2, 9);
-
-    // console.log({ id, ...data });
-    // console.log({ id, shopCarts });
     var today = new Date();
     var date =
-      today.getDate() +
-      "-" +
-      (today.getMonth() + 1) +
-      "-" +
-      today.getFullYear();
+      today.getMonth() + 1 + "-" + today.getDate() + "-" + today.getFullYear();
 
-    onAddShopCart({ id, date, shopCarts });
+    onAddShopCart({ id, date, shopCarts, subTotal });
     onAddCustomer({ id, ...data });
     localStorage.clear();
     history.push("/thanks");
@@ -159,7 +152,7 @@ const CheckOut = ({ products, onAddShopCart, onAddCustomer }) => {
                         ref={register}
                         aria-describedby="countryHelp"
                       >
-                        <option value="VN">Viet Nam</option>
+                        <option value="Viet Nam">Viet Nam</option>
                       </select>
                     </div>
                     <div className="form-group">
@@ -173,10 +166,10 @@ const CheckOut = ({ products, onAddShopCart, onAddCustomer }) => {
                         ref={register}
                         aria-describedby="cityHelp"
                       >
-                        <option value="HN">Ha Noi</option>
-                        <option value="HP">Hai Phong</option>
-                        <option value="DN">Da Nang</option>
-                        <option value="HCM">Ho Chi Minh</option>
+                        <option value="Ha Noi">Ha Noi</option>
+                        <option value="Hai Phong">Hai Phong</option>
+                        <option value="Da Nang">Da Nang</option>
+                        <option value="Ho Chi Minh">Ho Chi Minh</option>
                       </select>
                     </div>
                     <div className="form-group">
@@ -341,10 +334,10 @@ const CheckOut = ({ products, onAddShopCart, onAddCustomer }) => {
                   <div className="checkout__order__total">
                     <ul>
                       <li>
-                        Subtotal <span>$ {subTotal}</span>
+                        Subtotal <span>$ {subTotal.toFixed(2)}</span>
                       </li>
                       <li>
-                        Total <span>$ {subTotal}</span>
+                        Total <span>$ {subTotal.toFixed(2)}</span>
                       </li>
                     </ul>
                   </div>
