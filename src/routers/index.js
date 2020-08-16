@@ -252,7 +252,7 @@ const Routers = ({
                 <Thanks />
               </Route>
               <Route path="/blog">
-                <Blog />
+                <Blog blogs={blogs} />
               </Route>
               <Route path="/contact">
                 <Contact />

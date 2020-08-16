@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import moment from "moment";
+import { Link } from "react-router-dom";
+// import moment from "moment";
 
 const DashBoard = ({
   products,
@@ -135,7 +136,7 @@ const DashBoard = ({
               <div className="row no-gutters align-items-center">
                 <div className="col mr-2">
                   <div className="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                    Products
+                    <Link to="admin/products">Products</Link>
                   </div>
                   <div className="h5 mb-0 font-weight-bold text-gray-800">
                     {products.length}
@@ -152,7 +153,7 @@ const DashBoard = ({
               <div className="row no-gutters align-items-center">
                 <div className="col mr-2">
                   <div className="text-xs font-weight-bold text-success text-uppercase mb-1">
-                    Brands
+                    <Link to="admin/brands">Brands</Link>
                   </div>
                   <div className="h5 mb-0 font-weight-bold text-gray-800">
                     {brands.length}
@@ -169,7 +170,7 @@ const DashBoard = ({
               <div className="row no-gutters align-items-center">
                 <div className="col mr-2">
                   <div className="text-xs font-weight-bold text-info text-uppercase mb-1">
-                    Blogs
+                    <Link to="admin/blogs">Blogs</Link>
                   </div>
                   <div className="row no-gutters align-items-center">
                     <div className="col-auto">
@@ -202,7 +203,7 @@ const DashBoard = ({
               <div className="row no-gutters align-items-center">
                 <div className="col mr-2">
                   <div className="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                    Orders
+                    <Link to="admin/orders">Orders</Link>
                   </div>
                   <div className="h5 mb-0 font-weight-bold text-gray-800">
                     {shopCarts.length}
