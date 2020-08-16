@@ -10,7 +10,10 @@ const Header = (props) => {
           <div className="col-xl-3 col-lg-2">
             <div className="header__logo">
               <Link to="/">
-                <img src="https://firebasestorage.googleapis.com/v0/b/react-basic-1d16b.appspot.com/o/images%2Flogo.png?alt=media&token=a504d96d-580b-4340-90f2-956e1452b6f6" alt="" />
+                <img
+                  src="https://firebasestorage.googleapis.com/v0/b/react-basic-1d16b.appspot.com/o/images%2Flogo.png?alt=media&token=a504d96d-580b-4340-90f2-956e1452b6f6"
+                  alt=""
+                />
               </Link>
             </div>
           </div>
@@ -30,7 +33,7 @@ const Header = (props) => {
                 <li>
                   <Link to="/shop">Shop</Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link to="#">Pages</Link>
                   <ul className="dropdown">
                     <li>
@@ -40,7 +43,7 @@ const Header = (props) => {
                       <Link to="/checkOut">Checkout</Link>
                     </li>
                   </ul>
-                </li>
+                </li> */}
                 <li>
                   <Link to="/blog">Blog</Link>
                 </li>
@@ -69,7 +72,7 @@ const Header = (props) => {
                 <li>
                   <Link to="/shopCart">
                     <span className="icon_bag_alt" />
-                    {/* <div className="tip">2</div> */}
+                    <div className="tip">{localStorage.length}</div>
                   </Link>
                 </li>
               </ul>
