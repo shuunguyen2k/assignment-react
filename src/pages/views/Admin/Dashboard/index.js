@@ -11,12 +11,14 @@ const DashBoard = ({
   shopCarts,
   customers,
 }) => {
-  let subTotalYear = shopCarts.reduce((total = 0, shopCart) => {
+  let subTotalYear = 0;
+  let subTotalMonth = 0;
+  subTotalYear = shopCarts.reduce((total = 0, shopCart) => {
     if (new Date(shopCart.date).getFullYear() === new Date().getFullYear()) {
       return (total += shopCart.subTotal);
     }
   }, 0);
-  let subTotalMonth = shopCarts.reduce((total = 0, shopCart) => {
+  subTotalMonth = shopCarts.reduce((total = 0, shopCart) => {
     if (new Date(shopCart.date).getMonth() === new Date().getMonth()) {
       return (total += shopCart.subTotal);
     }
@@ -39,7 +41,7 @@ const DashBoard = ({
                     Earnings (Monthly)
                   </div>
                   <div className="h5 mb-0 font-weight-bold text-gray-800">
-                    ${subTotalMonth.toFixed(2)}
+                    $ {subTotalMonth}
                   </div>
                 </div>
                 <div className="col-auto">
@@ -59,7 +61,7 @@ const DashBoard = ({
                     Earnings (Annual)
                   </div>
                   <div className="h5 mb-0 font-weight-bold text-gray-800">
-                    $ {subTotalYear.toFixed(2)}
+                    $ {subTotalYear}
                   </div>
                 </div>
                 <div className="col-auto">

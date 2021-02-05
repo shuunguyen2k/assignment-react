@@ -91,7 +91,7 @@ const Order = ({ shopCarts, customers }) => {
                               float: "left",
                             }}
                           >
-                            $ {product.salePrice * product.quantity}
+                            $ {(product.salePrice * product.quantity).toFixed(2)}
                           </div>
                         </div>
                       ))}
